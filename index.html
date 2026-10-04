@@ -1,0 +1,4072 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Titre & SEO Principaux -->
+    <title>Olivier Salvatge | Galerie d'Art & Peintures Contemporaines</title>
+    <meta name="description" content="Découvrez l'univers artistique d'Olivier Salvatge : peintures contemporaines, œuvres originales et collections d'art. Galerie officielle et espace collectionneur.">
+    <meta name="keywords" content="Olivier Salvatge, peinture contemporaine, artiste peintre, galerie d art, tableau original, achat tableau d art">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.oliviersalvatge-galerie.fr/">
+
+    <!-- Open Graph (Partage Réseaux Sociaux & SMS) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.oliviersalvatge-galerie.fr/">
+    <meta property="og:title" content="Olivier Salvatge | Galerie d'Art Contemporain">
+    <meta property="og:description" content="Explorez les œuvres originales et la galerie officielle de l'artiste peintre Olivier Salvatge.">
+    <meta property="og:image" content="https://www.oliviersalvatge-galerie.fr/images/og-image.jpg">
+
+    <!-- Données Structurées Google (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ArtGallery",
+      "name": "Galerie Olivier Salvatge",
+      "url": "https://www.oliviersalvatge-galerie.fr/",
+      "description": "Galerie officielle de l'artiste peintre contemporain Olivier Salvatge.",
+      "artist": {
+        "@type": "Person",
+        "name": "Olivier Salvatge",
+        "jobTitle": "Artiste Peintre"
+      }
+    }
+    <!-- Favicon / Logo pour Google et les onglets -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    /* Désactive totalement le mouvement, la translation et le drag de toutes les cartes */
+.atelier-quote,
+[class*="atelier"],
+[class*="card"],
+[class*="container"],
+.section {
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  position: static !important;
+  touch-action: auto !important;
+  pointer-events: auto !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+/* Force les textes des titres à être purement statiques */
+h1, h2, h3, h4, .title, [class*="title"] {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+    /* Désactive le déplacement à la souris (drag & drop) et la sélection sur TOUT le site */
+html, body, div, span, h1, h2, h3, h4, p, img, button, section, header, footer, article {
+  -webkit-user-drag: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Conserve la possibilité de cliquer sur les boutons et liens normalement */
+a, button, input, select, textarea, [role="button"], [data-view] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+    *, *::before, *::after {
+  -webkit-user-drag: none !important;
+}
+    /* Bloque tous les cadrures d'édition et supprime le curseur de déplacement */
+/* Neutralisation absolue des encadrés et des mains au survol */
+*, *::before, *::after {
+  cursor: default !important;
+}
+a, button, input, select, textarea, [role="button"] {
+  cursor: pointer !important;
+}
+.resizable-block, .editable-text, [data-edit-key], [data-drop-image] {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.resizable-block:hover, .editable-text:hover, [data-edit-key]:hover {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: default !important;
+}
+    /* Style Moderne Apple pour le Panier */
+.cart-modal {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+}
+
+/* Éléments du panier */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cart-item img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Boutons d'action minimalistes arrondis */
+.btn-qty, .btn-remove {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-qty:hover, .btn-remove:hover {
+  background: rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
+}
+
+/* Footer & Bouton de Paiement */
+.cart-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.btn-checkout-stripe {
+  width: 100%;
+  padding: 16px;
+  background: #0071e3; /* Bleu Apple signature */
+  color: #ffffff;
+  border: none;
+  border-radius: 980px; /* Bords totalement arrondis / Pill button */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.3);
+}
+
+.btn-checkout-stripe:hover {
+  background: #0077ed;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+}
+
+.btn-checkout-stripe:active {
+  transform: scale(0.98);
+}
+    :root{
+      --paper:#EDEAE1; --paper-soft:#F5F3EC; --paper-deep:#E2DDD0; --canvas:#121009; --ink:#18160F; --ink-soft:#726B5C; --ink-faint:#A29A87; --accent:#A6702F; --accent-soft:#C99B5F; --verdigris:#4B5A50; --line:#DAD3C1;
+      /* Nav button translucency variables — change these to tweak transparency */
+      --nav-btn-bg-alpha: 0.05; /* more transparent by default (was 0.08) */
+      --nav-btn-hover-alpha: 0.08; /* hover alpha (was 0.12) */
+      --nav-btn-border-alpha: 0.4; /* border alpha */
+      --nav-btn-highlight-alpha: 0.6; /* inset highlight alpha */
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto; margin:0; background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Navbar — fixed liquid glass (Apple-like) */
+    nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,0.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.2);color:var(--ink)}
+    nav.scrolled{background:rgba(255,255,255,0.22);border-bottom:1px solid rgba(255,255,255,0.28)}
+    .brand{font-family:Fraunces, serif;font-size:20px}
+    .nav-links{display:flex;gap:12px;align-items:center}
+    /* Gel capsule glass 3D — translucent tinted glass, white text and strong volume */
+    .nav-links button{
+      position:relative;
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 14px;font-size:13px;font-weight:600;
+      color:#ffffff;text-shadow:0 1px 3px rgba(0,0,0,0.3);
+      border-radius:9999px;
+      /* translucent glass tint so background gradient shows through (alpha via var) */
+      background: rgba(255,255,255,var(--nav-btn-bg-alpha));
+      border: 1px solid rgba(255,255,255,var(--nav-btn-border-alpha));
+      box-shadow:
+        0 22px 36px rgba(0,0,0,0.32), /* strong outer shadow for lift */
+        0 6px 14px rgba(0,0,0,0.18),
+        inset 0 10px 18px rgba(255,255,255,var(--nav-btn-highlight-alpha)), /* bright rim/top highlight */
+        inset 0 -8px 16px rgba(0,0,0,0.14); /* inner bottom shadow to curve */
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s, filter .12s;
+      overflow:visible;
+    }
+    /* Curved glossy highlight (top) — subtle, keeps the molded look */
+    .nav-links button::before{
+      content:'';position:absolute;left:6%;right:6%;top:4%;height:42%;border-radius:9999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.65) 36%, rgba(255,255,255,0.18) 100%);
+      pointer-events:none;filter:blur(0.6px);opacity:0.95;
+    }
+    /* Dark rim under the pill for extra contour */
+    .nav-links button::after{
+      content:'';position:absolute;left:4%;right:4%;bottom:6%;height:14%;border-radius:9999px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.06));pointer-events:none;opacity:0.95;
+    }
+    .nav-links button:hover{
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 34px 56px rgba(0,0,0,0.34), inset 0 12px 20px rgba(255,255,255,0.75), inset 0 -10px 20px rgba(0,0,0,0.16);
+      filter: brightness(1.08);
+      background: rgba(255,255,255,var(--nav-btn-hover-alpha));
+    }
+    .nav-links button:active{ transform: translateY(0) scale(.995); box-shadow: 0 12px 22px rgba(0,0,0,0.22); }
+    .nav-links button:focus{ outline:2px solid rgba(66,45,255,0.14); outline-offset:4px }
+    .star-btn{padding:6px 12px;border-radius:9999px;background:rgba(255,255,255,var(--nav-btn-bg-alpha));border:1px solid rgba(255,255,255,var(--nav-btn-border-alpha));box-shadow:0 20px 36px rgba(0,0,0,0.28), inset 0 10px 16px rgba(255,255,255,var(--nav-btn-highlight-alpha));}
+
+    /* Shared Liquid Glass 3D controls for search and filters */
+    .glass-pill,
+    #searchInput,
+    #seriesFilter,
+    #sizeFilter {
+      position: relative;
+      min-height: 46px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.42);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      box-shadow:
+        0 16px 32px rgba(10,12,24,0.22),
+        0 4px 14px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.75),
+        inset 0 -12px 18px rgba(0,0,0,0.08);
+      color: #ffffff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+      transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s, filter .12s, border-color .14s;
+    }
+    .glass-pill::before,
+    #searchInput::before,
+    #seriesFilter::before,
+    #sizeFilter::before {
+      content: "";
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      top: 6%;
+      height: 42%;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.68) 38%, rgba(255,255,255,0.18) 100%);
+      pointer-events: none;
+      opacity: 0.9;
+    }
+    .glass-pill::after,
+    #searchInput::after,
+    #seriesFilter::after,
+    #sizeFilter::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      bottom: 6%;
+      height: 16%;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.04));
+      pointer-events: none;
+      opacity: 0.85;
+    }
+    .glass-pill:hover,
+    #searchInput:hover,
+    #seriesFilter:hover,
+    #sizeFilter:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.52);
+      box-shadow:
+        0 20px 36px rgba(0,0,0,0.28),
+        0 6px 16px rgba(0,0,0,0.14),
+        inset 0 2px 0 rgba(255,255,255,0.76),
+        inset 0 -12px 18px rgba(0,0,0,0.1);
+      filter: brightness(1.08);
+    }
+    #searchInput,
+    #seriesFilter,
+    #sizeFilter {
+      width: min(100%, 260px);
+      padding: 0 18px;
+      font: 600 14px/1.2 Inter, sans-serif;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      outline: none;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    #searchInput::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+    #searchInput {
+      min-width: 260px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    #seriesFilter,
+    #sizeFilter {
+      background-image:
+        linear-gradient(45deg, transparent 50%, #ffffff 50%),
+        linear-gradient(135deg, #ffffff 50%, transparent 50%);
+      background-position:
+        calc(100% - 20px) calc(50% - 2px),
+        calc(100% - 14px) calc(50% - 2px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 40px;
+      color-scheme: dark;
+    }
+    #seriesFilter option,
+    #sizeFilter option {
+      background: rgba(28, 28, 36, 0.9);
+      color: #ffffff;
+    }
+    #searchInput:focus,
+    #seriesFilter:focus,
+    #sizeFilter:focus {
+      border-color: rgba(255,255,255,0.7);
+      box-shadow:
+        0 0 0 3px rgba(255,255,255,0.12),
+        0 18px 36px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.82),
+        inset 0 -12px 18px rgba(0,0,0,0.08);
+      outline: none;
+    }
+
+    .liquid-glass-mode {
+      --glass-bg: rgba(255,255,255,0.11);
+      --glass-border: rgba(255,255,255,0.5);
+      --glass-highlight: rgba(255,255,255,0.72);
+      --glass-shadow: rgba(14,17,26,0.32);
+      --glass-text: #ffffff;
+      --glass-placeholder: rgba(255,255,255,0.72);
+    }
+    .liquid-glass-mode .search-shell {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-width: 260px;
+      min-height: 46px;
+      border-radius: 9999px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px) saturate(150%);
+      -webkit-backdrop-filter: blur(18px) saturate(150%);
+      box-shadow:
+        0 18px 34px var(--glass-shadow),
+        0 6px 18px rgba(0,0,0,0.16),
+        inset 0 1px 0 rgba(255,255,255,0.8),
+        inset 0 -16px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .liquid-glass-mode .search-shell::before,
+    .liquid-glass-mode .search-shell::after,
+    .liquid-glass-mode .glass-toggle::before,
+    .liquid-glass-mode .glass-toggle::after,
+    .liquid-glass-mode #searchInput::before,
+    .liquid-glass-mode #seriesFilter::before,
+    .liquid-glass-mode #sizeFilter::before,
+    .liquid-glass-mode #searchInput::after,
+    .liquid-glass-mode #seriesFilter::after,
+    .liquid-glass-mode #sizeFilter::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+    .liquid-glass-mode .search-shell::before,
+    .liquid-glass-mode #searchInput::before,
+    .liquid-glass-mode #seriesFilter::before,
+    .liquid-glass-mode #sizeFilter::before {
+      left: 7%;
+      right: 7%;
+      top: 5%;
+      height: 42%;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.58) 40%, rgba(255,255,255,0.10) 100%);
+      opacity: 0.9;
+    }
+    .liquid-glass-mode .search-shell::after,
+    .liquid-glass-mode #searchInput::after,
+    .liquid-glass-mode #seriesFilter::after,
+    .liquid-glass-mode #sizeFilter::after {
+      left: 10%;
+      right: 10%;
+      bottom: 6%;
+      height: 16%;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.04));
+      opacity: 0.8;
+    }
+    .liquid-glass-mode .search-icon {
+      position: absolute;
+      left: 16px;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 50%;
+      opacity: 0.9;
+      z-index: 2;
+    }
+    .liquid-glass-mode .search-icon::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 2px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 2px;
+      right: -5px;
+      bottom: -2px;
+      transform: rotate(42deg);
+    }
+    .liquid-glass-mode #searchInput,
+    .liquid-glass-mode #seriesFilter,
+    .liquid-glass-mode #sizeFilter {
+      width: min(100%, 260px);
+      padding: 0 18px 0 42px;
+      background: transparent;
+      border: 0;
+      color: var(--glass-text);
+      font: 600 14px/1.2 Inter, sans-serif;
+      letter-spacing: 0.01em;
+      outline: none;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      color-scheme: dark;
+    }
+    .liquid-glass-mode #searchInput::placeholder {
+      color: var(--glass-placeholder);
+    }
+    .liquid-glass-mode #seriesFilter,
+    .liquid-glass-mode #sizeFilter {
+      background-image:
+        linear-gradient(45deg, transparent 50%, #ffffff 50%),
+        linear-gradient(135deg, #ffffff 50%, transparent 50%);
+      background-position:
+        calc(100% - 20px) calc(50% - 2px),
+        calc(100% - 14px) calc(50% - 2px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 42px;
+      padding-left: 18px;
+      background-color: transparent;
+    }
+    .liquid-glass-mode #seriesFilter option,
+    .liquid-glass-mode #sizeFilter option {
+      background: rgba(20,24,32,0.9);
+      color: #ffffff;
+    }
+    .liquid-glass-mode #searchInput:focus,
+    .liquid-glass-mode #seriesFilter:focus,
+    .liquid-glass-mode #sizeFilter:focus {
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.12), inset 0 1px 0 rgba(255,255,255,0.7);
+      outline: none;
+    }
+    .liquid-glass-mode .gallery-grid {
+      gap: 26px;
+    }
+    .liquid-glass-mode .card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow:
+        0 18px 32px rgba(12,14,22,0.22),
+        0 6px 16px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.58),
+        inset 0 -12px 18px rgba(0,0,0,0.06);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .liquid-glass-mode .card img {
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  display: block;
+}
+    .liquid-glass-mode .card-body {
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .liquid-glass-mode .muted,
+    .liquid-glass-mode .label,
+    .liquid-glass-mode .card .muted {
+      color: rgba(255,255,255,0.78);
+    }
+    /* Apple-style glass for all non-gallery pages */
+    main > section:not(#home):not(#galerie),
+    main > section:not(#home):not(#galerie) > * {
+      background: rgba(255,255,255,0.12) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255,255,255,0.35) !important;
+      border-radius: 24px !important;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), 0 8px 32px rgba(0,0,0,0.12) !important;
+      color: #ffffff !important;
+    }
+    main > section:not(#home):not(#galerie) * {
+      color: #ffffff !important;
+    }
+    main > section:not(#home):not(#galerie) img,
+    main > section:not(#home):not(#galerie) picture img,
+    main > section:not(#home):not(#galerie) video {
+      border-radius: 20px !important;
+      border: 1px solid rgba(255,255,255,0.28) !important;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    }
+    main > section:not(#home):not(#galerie) .label,
+    main > section:not(#home):not(#galerie) .muted,
+    main > section:not(#home):not(#galerie) p,
+    main > section:not(#home):not(#galerie) li,
+    main > section:not(#home):not(#galerie) h1,
+    main > section:not(#home):not(#galerie) h2,
+    main > section:not(#home):not(#galerie) h3,
+    main > section:not(#home):not(#galerie) h4,
+    main > section:not(#home):not(#galerie) a,
+    main > section:not(#home):not(#galerie) input,
+    main > section:not(#home):not(#galerie) textarea,
+    main > section:not(#home):not(#galerie) button {
+      color: #ffffff !important;
+    }
+    main > section:not(#home):not(#galerie) input,
+    main > section:not(#home):not(#galerie) textarea {
+      background: rgba(255,255,255,0.06) !important;
+      border-color: rgba(255,255,255,0.28) !important;
+    }
+    #atelier .editable-text[contenteditable="true"] {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      color: #ffffff !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    #atelier #manifestoText {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      color: #ffffff !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    #atelier > div:first-of-type > div:first-of-type {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      padding: 40px !important;
+    }
+    #atelier > div:first-of-type {
+      padding: 0 !important;
+      margin: 0 0 12px !important;
+      min-height: 0 !important;
+      border-radius: 0 !important;
+    }
+    #atelier > div:first-of-type .label {
+      margin: 0 0 4px !important;
+      line-height: 1.2 !important;
+    }
+    #atelier > div:first-of-type h2 {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.1 !important;
+      font-size: 34px !important;
+      font-style: italic !important;
+      font-family: Fraunces, serif !important;
+    }
+    #atelier #manifestoText,
+    #atelier .editable-text[contenteditable="true"] {
+      padding: 40px !important;
+    }
+
+    #atelier .atelier-shell {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+    .atelier-shell {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .atelier-text-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 35px;
+      color: #ffffff !important;
+      width: 100%;
+      box-sizing: border-box;
+      height: 440px;
+      max-height: 440px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    .atelier-text-card .atelier-quote {
+      display: inline-block !important;
+      width: auto !important;
+      max-width: max-content;
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin: 0 0 20px 0 !important;
+      color: #ffffff !important;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      text-align: left !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      letter-spacing: normal;
+      position: relative;
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+    }
+    .atelier-text-card .atelier-quote:active {
+      cursor: grabbing;
+    }
+    .atelier-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ffffff !important;
+      outline: none;
+      margin: 0;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.3) transparent;
+      padding-right: 8px;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+    .atelier-description::-webkit-scrollbar {
+      width: 8px;
+    }
+    .atelier-description::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.28);
+      border-radius: 999px;
+    }
+    #atelier .atelier-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+      height: 440px;
+    }
+    #atelier .atelier-gallery img {
+      display: block !important;
+      width: 100% !important;
+      height: 200px !important;
+      object-fit: cover !important;
+      border-radius: 18px !important;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+      max-width: none !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      flex: 0 0 auto;
+    }
+    #atelier [data-drop-image] {
+      width: 100% !important;
+      height: 200px !important;
+      object-fit: cover !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+    }
+
+    /* Hero */
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;background:transparent;color:var(--paper-soft)}
+    .blob{position:absolute;border-radius:999px;filter:blur(60px);mix-blend-mode:screen}
+    .hero-inner{z-index:2;max-width:900px;padding:24px}
+    .label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;opacity:.9}
+    h1{font-family:Fraunces, serif;font-style:italic;font-weight:400;margin:10px 0;font-size:clamp(2.5rem,7vw,5rem);line-height:1}
+    .cta{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:22px;
+      padding:12px 24px;
+      border-radius:9999px;
+      border:1px solid rgba(255,255,255,0.42);
+      background: rgba(255,255,255,0.08);
+      color:#ffffff;
+      text-shadow:0 1px 3px rgba(0,0,0,0.32);
+      font-weight:600;
+      letter-spacing:0.04em;
+      cursor:pointer;
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      box-shadow:
+        0 18px 32px rgba(0,0,0,0.22),
+        0 6px 18px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.75),
+        inset 0 -14px 22px rgba(0,0,0,0.08);
+      transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s, filter .12s;
+      overflow:hidden;
+    }
+    .cta::before{
+      content:'';
+      position:absolute;
+      left:7%;right:7%;top:6%;height:42%;border-radius:9999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.66) 40%, rgba(255,255,255,0.18) 100%);
+      pointer-events:none;
+      opacity:0.9;
+    }
+    .cta::after{
+      content:'';
+      position:absolute;left:10%;right:10%;bottom:6%;height:16%;border-radius:9999px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.04));
+      pointer-events:none;opacity:0.85;
+    }
+    .cta:hover{
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 24px 40px rgba(0,0,0,0.26), inset 0 2px 0 rgba(255,255,255,0.8), inset 0 -14px 22px rgba(0,0,0,0.1);
+      filter: brightness(1.08);
+    }
+
+    main{padding-top:96px}
+
+    /* Gallery */
+    .section{padding:56px 24px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;align-items:start}
+    .card{background:rgba(237,234,225,0.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow:hidden;border-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.06);cursor:pointer;border:1px solid rgba(218,211,193,0.12)}
+    .card img{width:100%;height:320px;object-fit:contain;display:block;transition:transform 1s}
+    .card:hover img{transform:scale(1.05)}
+    .card-body{padding:12px;background:rgba(255,255,255,0.03)}
+    .muted{color:var(--ink-faint);font-size:13px}
+
+    /* Drawer/cart */
+    .cart-drawer{position:fixed;right:0;top:0;bottom:0;width:360px;background:var(--paper);box-shadow:-20px 0 40px rgba(0,0,0,.12);transform:translateX(110%);transition:transform .4s;z-index:60}
+    .cart-drawer.open{transform:translateX(0)}
+    .overlay{position:fixed;inset:0;background:rgba(18,16,9,.45);backdrop-filter:blur(2px);opacity:0;transition:opacity .3s;pointer-events:none}
+    .overlay.open{opacity:1;pointer-events:auto}
+
+    /* Footer */
+    footer{padding:40px 24px;background:var(--paper-soft);border-top:1px solid var(--line);margin-top:40px}
+
+    /* Details */
+    .details{padding:36px;background:var(--paper-soft);border-radius:6px}
+
+    /* Simple responsive */
+    @media(max-width:700px){.hero{height:70vh} .card img{height:220px}}
+    /* Make the site background transparent so the global shader shows through */
+    body, main, section, .container, footer, .cart-drawer, .details, form { background: transparent !important }
+
+    /* When the shader is hidden, force a clean white background for readable pages */
+    html.no-shader body, html.no-shader main, html.no-shader section, html.no-shader .container, html.no-shader footer, html.no-shader .cart-drawer, html.no-shader .details, html.no-shader form { background: #ffffff !important }
+
+    /* Global shader canvas that covers the entire viewport */
+    #shader-global{position:fixed;top:0;left:0;width:100%;height:100%;display:block;pointer-events:none;z-index:-2}
+
+    /* Shader palette controls */
+    .shader-panel{
+      position:fixed;right:20px;top:88px;z-index:120;
+      width:280px;padding:14px 14px 12px;border-radius:18px;
+      border:1px solid rgba(255,255,255,0.34);
+      background:rgba(18,19,28,0.26);backdrop-filter:blur(18px) saturate(160%);
+      -webkit-backdrop-filter:blur(18px) saturate(160%);
+      box-shadow:0 22px 50px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.55);
+      color:#fff;
+      display:none !important;
+    }
+    .shader-panel.visible{display:none !important}
+    .shader-panel-header{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:10px}
+    .shader-panel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+    .shader-color{width:100%;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,0.36);background:transparent;padding:0;cursor:pointer;overflow:hidden}
+    .shader-speed{width:100%;accent-color:#9ac6ff}
+    .shader-panel label{display:block;font-size:11px;color:rgba(255,255,255,0.76);margin-bottom:6px}
+    .shader-panel-actions{display:flex;justify-content:flex-end;margin-top:12px}
+    .shader-save-btn{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.38);background:rgba(255,255,255,0.08);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .shader-save-btn:hover{background:rgba(255,255,255,0.14)}
+
+    .editable-text{outline:none;border:1px solid transparent;transition:border-color .12s ease, box-shadow .12s ease, background .12s ease;resize:none;overflow:hidden;min-width:120px;min-height:auto;position:relative;cursor:grab;user-select:none;touch-action:none}
+    .editable-text:hover,.editable-text:focus{border-color:rgba(255,255,255,0.36);box-shadow:0 0 0 3px rgba(255,255,255,0.08);background:rgba(255,255,255,0.04)}
+    .editable-text:active{cursor:grabbing}
+    .resizable-block{position:relative;resize:none;overflow:hidden;min-width:120px;min-height:60px}
+    .resizable-block .resize-handle{position:absolute;right:8px;bottom:8px;width:14px;height:14px;border-radius:5px;border:1px solid rgba(255,255,255,0.38);background:rgba(255,255,255,0.18);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5), 0 8px 18px rgba(0,0,0,0.12);cursor:nwse-resize;opacity:0;transition:opacity .15s ease, transform .15s ease}
+    .resizable-block:hover .resize-handle,.resizable-block:focus-within .resize-handle,.resizable-block.active-resize .resize-handle{opacity:1;transform:scale(1.04)}
+    [data-drop-image]{resize:none;overflow:hidden;display:block;max-width:100%;min-width:100px;min-height:auto}
+    .gallery-tools{display:flex;justify-content:center;margin:0 auto 18px;max-width:1100px}
+    .add-art-btn{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.42);background:rgba(255,255,255,0.08);color:#fff;cursor:pointer;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 18px 32px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.75), inset 0 -14px 22px rgba(0,0,0,0.08)}
+    .add-art-btn:hover{filter:brightness(1.08)}
+    .custom-builder{margin-top:18px;padding:18px;border-radius:26px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5), 0 18px 42px rgba(0,0,0,0.08)}
+    .custom-builder-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+    .custom-builder-header h3{margin:0;font-family:Fraunces,serif;font-style:italic;font-size:28px;font-weight:400;color:#fff}
+    .custom-builder-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+    .custom-add-btn,.custom-card-delete,.custom-card-image,.custom-mode-toggle{padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.08);color:#fff;cursor:pointer}
+    .custom-cards-canvas{position:relative;min-height:320px;border-radius:22px;border:1px dashed rgba(255,255,255,0.2);background:rgba(255,255,255,0.02);padding:12px;overflow:hidden}
+    .custom-card{position:absolute;display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:24px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4), 0 16px 28px rgba(0,0,0,0.08);transition:box-shadow .15s ease;resize:none;overflow:hidden;min-width:180px;min-height:120px}
+    .custom-card:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,0.5), 0 20px 36px rgba(0,0,0,0.12)}
+    .custom-card-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;color:rgba(255,255,255,0.78)}
+    .custom-card-tools button{padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.06);color:#fff;cursor:pointer}
+    .custom-card-body{width:100%;min-height:80px;border-radius:16px;padding:10px 12px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.02);color:#fff;line-height:1.5;white-space:pre-wrap;overflow:hidden;word-break:break-word}
+    .custom-card-body[contenteditable="true"]{outline:none;box-shadow:0 0 0 2px rgba(255,255,255,0.08)}
+    .custom-card-image-preview{max-width:100%;max-height:120px;border-radius:14px;object-fit:cover;display:none;border:1px solid rgba(255,255,255,0.18)}
+    .custom-card-size-controls{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:8px;margin-top:4px}
+    .custom-card-size-controls label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:rgba(255,255,255,0.72)}
+    .custom-card-size-controls input{width:100%}
+    .page-customizer .custom-card-controls{display:block}
+    .page-customizer.controls-hidden .custom-card-controls{display:none !important}
+    .page-customizer.controls-hidden .custom-card{cursor:default}
+    .page-customizer.controls-hidden .custom-card-body{border-color:transparent;background:rgba(255,255,255,0.03)}
+    .nav-links button[data-view]{outline:none}
+    .nav-links button[data-view][contenteditable="true"]{cursor:text}
+    .nav-links button[data-view][contenteditable="true"]:focus{box-shadow:0 0 0 3px rgba(255,255,255,0.1)}
+    .glass-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,12,18,0.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200}
+    .glass-modal.open{display:flex}
+    .glass-modal-card{width:min(540px,calc(100vw - 32px));padding:22px;border-radius:28px;resize:both;overflow:auto;min-width:280px;min-height:180px;border:1px solid rgba(255,255,255,0.35);background:rgba(18,19,28,0.42);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
+    .glass-modal-card h3{margin:0 0 16px; font-family:Fraunces, serif; font-style:italic; font-weight:400; font-size:28px; color:#fff}
+    .glass-modal-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .glass-modal-form .full{grid-column:1 / -1}
+    .glass-modal-form input,.glass-modal-form button{font:inherit}
+    .glass-modal-form input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.32);background:rgba(255,255,255,0.08);color:#fff}
+    .glass-modal-form input::placeholder{color:rgba(255,255,255,0.68)}
+    .glass-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:16px}
+    .glass-modal-actions button{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.32);background:rgba(255,255,255,0.08);color:#fff;cursor:pointer}
+    .drop-zone{display:flex;align-items:center;justify-content:center;min-height:120px;border:1px dashed rgba(255,255,255,0.35);border-radius:18px;background:rgba(255,255,255,0.04);margin-bottom:12px;cursor:pointer;position:relative;overflow:hidden}
+    .drop-zone img{max-width:100%;max-height:120px;object-fit:cover;border-radius:14px}
+    .export-btn{margin:24px auto 0;display:block;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.38);background:rgba(255,255,255,0.08);color:#fff;cursor:pointer;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
+
+    /* galerie layout: gallery content sits above the shader */
+    #galerie{position:relative;overflow:visible;background:transparent}
+    #galerie .gallery-content{position:relative;z-index:1;background:transparent}
+#exhibitions .hero-card,
+#custom .hero-card,
+#vip .hero-card,
+#about .hero-card,
+#atelier > div:first-child {
+  height: 120px !important;
+  min-height: 120px !important;
+  max-height: 120px !important;
+  padding: 12px 20px !important;
+  overflow: hidden !important;
+  resize: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 24px !important;
+}
+
+
+/* Masque les sur-titres (CALENDRIER, SUR-MESURE...) */
+.hero-card .label,
+.hero-card span:not(.hero-title-single) {
+  display: none !important;
+}
+
+/* Centrage parfait et police Fraunces pour tous les titres */
+.hero-card h2,
+.hero-title-single {
+  font-family: Fraunces, serif !important;
+  font-style: italic !important;
+  font-size: 2rem !important;
+  margin: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  color: var(--ink) !important;
+}
+/* Nettoyage des contrôles d'édition et boutons dev */
+.page-customizer,
+#saveTextPlacementBtn,
+#exportHtmlBtn,
+[class*="-handle"],
+.resize-handle,
+.ui-resizable-handle {
+    display: none !important;
+}
+/* Supprime tout effet de verre à l'intérieur du salon */
+body.liquid-glass-mode #roomMockup,
+body.liquid-glass-mode #roomMockup *,
+body.liquid-glass-mode #roomMockup *::before,
+body.liquid-glass-mode #roomMockup *::after {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+/* 1. Galerie Mordoré (inchangé) */
+.card img[alt="Mordoré"],
+.card img[src*="oeuvre2.png"] {
+  object-fit: contain !important;
+  padding: 4px !important;
+}
+
+#mediaDisplayArea img[src*="salon-mordore"] {
+  object-fit: cover !important;
+  object-position: bottom center !important;
+}
+
+/* TEST VISUEL EXTRÊME ATELIER */
+#atelier h3,
+div[data-view="atelier"] h3,
+.editable-text[data-edit-key="editable-text-12"] {
+  margin-bottom: 0px !important;
+  color: red !important;
+}
+
+#atelier p,
+div[data-view="atelier"] p,
+.editable-text[data-edit-key="editable-text-13"] {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  color: red !important;
+}
+
+/* Correction de la lettre g coupée sur le titre principal */
+#home h1, 
+.hero h1,
+#homeTitle,
+[data-view="home"] h1 {
+  overflow: visible !important;
+  line-height: 1.2 !important;
+  padding-bottom: 8px !important;
+}
+
+/* Bloque l'interaction et applique le style grisé */
+.card.sold {
+  position: relative;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Effet noir et blanc / désaturé sur la photo */
+.card.sold img {
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.3s ease;
+}
+
+.card.sold .card-body h3,
+.card.sold .card-body .muted {
+  opacity: 0.5;
+}
+
+/* Badge stylisé sur l'image */
+.card.sold::after {
+  content: "VENDU / INDISPONIBLE";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+  /* --- 1. GALERIE : 2 colonnes conservées --- */
+  .gallery-grid, #gallery-view .grid, .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+
+  /* --- 2. FICHE ŒUVRE (Croquis 4) --- */
+  .artwork-detail, [id*="-detail"], .modal-content, .detail-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bouton retour en premier */
+  .back-btn, [class*="back"] {
+    order: 1 !important;
+    align-self: flex-start !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Grande image principale pleine largeur */
+  .main-image-container, .artwork-detail img:first-of-type, [id*="-detail"] .main-image {
+    order: 2 !important;
+    width: 100% !important;
+    max-height: 350px !important;
+    object-fit: contain !important;
+    margin: 0 0 15px 0 !important;
+  }
+
+  /* 3 vignettes (Aperçu / Zoom / Salon) en ligne */
+  .thumbnails-container, .artwork-thumbnails, [class*="thumb"] {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .thumbnails-container img, .artwork-thumbnails img, [class*="thumb"] img, [class*="thumb"] button {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+
+  /* Bandeau "Acquérir cette œuvre" plein écran */
+  .btn-buy, .btn-acquire, [class*="acquire"], [class*="buy"] {
+    order: 4 !important;
+    width: 100% !important;
+    padding: 14px !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bloc d'informations en bas */
+  .artwork-info, .detail-info, [id*="-detail"] .info-box {
+    order: 5 !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+
+  /* --- 3. L'ATELIER (Croquis 1) --- */
+  .atelier-section, [class*="atelier"], .coulisses-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bloc de texte "Dans les coulisses" scrollable si long */
+  .coulisses-text-box, .coulisses-container .text-block {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Grille 2x2 pour les 4 photos de l'atelier */
+  .atelier-photos, .atelier-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .atelier-photos img, .atelier-grid img {
+    width: 100% !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+
+  /* Musiques empilées sous la citation */
+  .music-section, .music-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important;
+    position: static !important; /* Annule tout chevauchement */
+  }
+
+
+  /* --- 4. À PROPOS / BIOGRAPHIE (Croquis 2) --- */
+  .about-container, .bio-container, [class*="about"], [class*="bio"] {
+    display: block !important; /* Permet au texte d'envelopper l'image */
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Images flottantes à gauche pour l'effet habillage / journal */
+  .bio-image, .about-image, .bio-container img {
+    float: left !important;
+    width: 40% !important;
+    max-width: 140px !important;
+    height: auto !important;
+    margin: 0 12px 10px 0 !important;
+    border-radius: 8px !important;
+  }
+
+  .bio-section-title, .about-subtitle {
+    display: inline !important;
+    font-weight: bold !important;
+  }
+
+  /* Nettoyage du float entre les sections "Qui suis-je ?" et "Ma peinture" */
+  .bio-clearfix, .bio-block {
+    clear: both !important;
+    margin-top: 20px !important;
+  }
+
+
+  /* --- 5. COLLECTIONNEUR / ESPACE VIP (Croquis 3) --- */
+  .vip-container, .collectionneur-container, [class*="vip"], [class*="collectionneur"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 10px !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bloc Connexion Membre en haut */
+  .vip-login-box, .vip-form, [class*="login"], [class*="auth"] {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  /* Bloc Avantages sous la connexion */
+  .vip-advantages-title {
+    order: 2 !important;
+    width: 100% !important;
+  }
+
+  /* Grille 2x2 pour les 4 cartes d'avantages */
+  .vip-advantages-grid, .vip-benefits, [class*="advantage-list"] {
+    order: 3 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .vip-card, .benefit-card, [class*="advantage-item"] {
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    font-size: 0.85rem !important;
+  }
+}
+/* Lien article La Montagne : texte noir (ordi + téléphone) */
+#exhibitions#exhibitions .expo-press-link,
+#exhibitions#exhibitions .expo-press-link * {
+  color: #1a1a1a !important;
+}
+
+/* Ajustement du composant accordéon d'exposition */
+.expo-content, [class*="expo-content"] {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Quand la case est ouverte */
+.expo-card.open .expo-content, [class*="expo-card"].active [class*="expo-content"] {
+  max-height: 2000px;
+}
+
+/* Images d'exposition : elles remplissent entièrement leur cadre 4/3 */
+#exhibitions .expo-gallery-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* TÉLÉPHONE UNIQUEMENT : photos ancrées vers le bas pour voir les œuvres en entier */
+@media (max-width: 768px) {
+  #exhibitions .expo-gallery-wrapper img {
+    object-position: center bottom !important;
+  }
+  /* la 1ère photo (celle avec toi) reste centrée */
+  #exhibitions .expo-gallery-wrapper div[style*="grid-template-columns"] > div:first-child img {
+    object-position: center center !important;
+  }
+}
+  </style>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="liquid-glass-mode">
+  <nav id="navbar" class="">
+    <div class="brand">Olivier <span style="font-style:italic;font-weight:300;opacity:.8">Studio</span></div>
+    <div class="nav-links">
+      <button data-view="gallery">Galerie</button>
+      <button data-view="atelier">L'Atelier</button>
+      <button data-view="exhibitions">Expositions</button>
+      <button data-view="custom">Sur-Mesure</button>
+      <button data-view="about">À Propos</button>
+      <button id="vipBtn" class="star-btn" data-view="vip">Collectionneurs</button>
+      <button id="cartBtn">Panier (<span id="cartCount">0</span>)</button>
+      <button id="saveTextPlacementBtn" type="button" class="add-art-btn" style="padding:8px 12px;font-size:11px;letter-spacing:.08em">Enregistrer les textes</button>
+    </div>
+  </nav>
+
+  <div id="shaderControls" class="shader-panel" aria-live="polite" style="display:none !important;">
+    <div class="shader-panel-header">
+      <span>Shader</span>
+      <span id="shaderPageLabel">Atelier</span>
+    </div>
+    <div class="shader-panel-grid">
+      <input class="shader-color" type="color" data-color-index="0" value="#432deb" />
+      <input class="shader-color" type="color" data-color-index="1" value="#5c99db" />
+      <input class="shader-color" type="color" data-color-index="2" value="#c723b2" />
+      <input class="shader-color" type="color" data-color-index="3" value="#b653ca" />
+    </div>
+    <label for="shaderSpeed">Vitesse</label>
+    <input id="shaderSpeed" class="shader-speed" type="range" min="0.2" max="2.6" step="0.1" value="0.8" />
+    <div class="shader-panel-actions">
+      <button id="saveShaderConfigBtn" class="shader-save-btn" type="button">Enregistrer</button>
+    </div>
+  </div>
+
+  <!-- Global shader canvas covering the entire page (fixed) -->
+  <canvas id="shader-global" aria-hidden="true"></canvas>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div class="label">Peinture Abstraite — Atelier de Clermont-Ferrand</div>
+        <h1>Olivier Salvatge</h1>
+        <p style="opacity:.7;max-width:520px;margin:16px auto;">« L'image n'est pas un but, mais un passage. »</p>
+        <div class="cta" id="discoverBtn">Découvrir la Galerie</div>
+      </div>
+    </section>
+
+    <section id="galerie" class="section container">
+      <div class="gallery-content">
+      <div style="text-align:center;max-width:800px;margin:0 auto 28px">
+        <div id="top-galerie"></div>
+        <div class="label">Collection</div>
+          <h2 id="galerieHeading" style="font-family:Fraunces, serif;font-style:italic;font-size:34px;margin:8px 0">Œuvres Disponibles</h2>
+        <p class="muted">Chaque toile est une pièce unique, signée et livrée avec son certificat d'authenticité.</p>
+      </div>
+
+      
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:18px;flex-wrap:wrap">
+        <label class="search-shell" aria-label="Recherche">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="searchInput" class="glass-pill" type="text" placeholder="Rechercher une œuvre..." />
+        </label>
+        <select id="seriesFilter" class="glass-pill" aria-label="Filtrer par série"></select>
+        <select id="sizeFilter" class="glass-pill" aria-label="Filtrer par taille"></select>
+      </div>
+
+      <div id="grid" class="gallery-grid"></div>
+      </div><!-- /.gallery-content -->
+    </section>
+
+<section id="about" class="section container" style="display:none">
+  <h2 class="hero-title-single" style="display:flex;align-items:center;justify-content:center;margin:0 0 24px 0 !important;padding:24px 18px;background:var(--paper-soft);border-radius:24px;">Biographie</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;">
+  <div>
+    <img id="profileImg" src="images/portrait.jpg" alt="portrait" style="width:100%; height:420px; object-fit:cover; border-radius:16px; display:block;" />
+    <img id="aboutImg2" src="images/photo_about_2.jpg" alt="Atelier" style="width:100%; height:420px; object-fit:cover; border-radius:16px; margin-top:16px; display:block;" />
+  </div>
+  <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; padding-right:24px;">
+    <div id="aboutText" style="color:var(--ink-soft); line-height:1.5;"></div>
+  </div>
+</div>
+      <div class="page-customizer" data-page="about">
+        <div class="custom-builder">
+          <div class="custom-builder-header">
+            <h3>Blocs personnalisables</h3>
+            <div class="custom-builder-actions">
+              <button class="custom-mode-toggle" type="button">Masquer les contrôles</button>
+              <button class="custom-add-btn" type="button">+ Ajouter une case</button>
+            </div>
+          </div>
+          <div class="custom-cards-canvas" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="atelier" class="section container" style="display:none">
+    <h2 data-edit-key="atelier_title" class="editable-text hero-title-single" style="padding:24px 18px;background:var(--paper-soft);border-radius:24px;text-align:center;">Dans les coulisses</h2>
+    <div class="atelier-shell" style="margin-top:28px !important;">
+      <div class="atelier-text-card" style="padding:24px 12px 24px 0px;">
+        <p class="atelier-quote" style="text-align:center;font-family:Fraunces,serif;font-style:italic;font-size:1.1rem;margin-bottom:16px;color:#1a1a1a !important;line-height:1.3;margin-left:-25px;width:calc(100% + 25px);">« L'image n'est pas un but, mais un passage »</p>
+          <div class="atelier-description">
+            Je peins pour atteindre un état plutôt que pour représenter une forme. Mon travail s’inscrit dans une recherche sensible où l’image n’est pas un but, mais un passage. L’abstraction me permet de me libérer du réel immédiat pour explorer une dimension plus intérieure, presque méditative, où la couleur devient langage et la matière, respiration.
+
+Ce qui m’importe avant tout, c’est la sensation d’apaisement qui émane de l’œuvre. Non pas un apaisement vide ou passif, mais une sérénité active, profonde, qui se construit dans la vibration même des couleurs. Elles se rencontrent, se mêlent, parfois s’entrechoquent comme dans un kaléidoscope en mouvement, mais finissent par trouver une forme d’équilibre. Cet équilibre n’est jamais figé : il est vivant, instable, et c’est précisément cette tension douce qui ouvre un espace de contemplation.
+
+Dans cette démarche, je me sens proche des réflexions de Wassily Kandinsky, pour qui la couleur possédait une résonance intérieure capable de toucher directement l’âme, indépendamment de toute figuration. De même, l’approche de Mark Rothko, avec ses champs colorés immersifs, m’inspire dans cette volonté de créer une expérience émotionnelle pure, presque silencieuse, où le regardeur est invité à ralentir et à ressentir plutôt qu’à analyser.
+
+Mon travail dialogue aussi, d’une certaine manière, avec les recherches sur la perception et la phénoménologie de l’art, notamment chez Maurice Merleau-Ponty, qui voyait dans la peinture un moyen d’accéder à une forme de présence au monde plus immédiate, plus incarnée. Ainsi, mes compositions ne cherchent pas à raconter une histoire, mais à instaurer une relation : un moment suspendu entre l’œuvre et celui qui la regarde.
+
+Peindre devient alors un acte d’équilibre entre lâcher-prise et intention. Les couleurs se déploient librement, mais leur organisation répond à une intuition précise : celle de guider le regard vers un état de calme. Cette sérénité n’est pas imposée, elle émerge progressivement, comme une évidence discrète.
+
+En ce sens, ma peinture s’inscrit dans une recherche contemporaine où l’art ne se limite plus à la représentation ou au concept, mais devient une expérience à vivre. Une expérience intime, sensorielle, où chacun peut projeter son propre rythme, son propre silence.
+
+Créer, pour moi, c’est offrir un espace. Un espace où le tumulte se transforme en harmonie, où la complexité visuelle ouvre paradoxalement sur une forme de paix intérieure.
+          </div>
+        </div>
+        <div class="atelier-gallery">
+          <img data-drop-image="atelier-1" src="https://i.ibb.co/LhJTMfV6/image.jpg" alt="" />
+          <img data-drop-image="atelier-2" src="https://i.ibb.co/WNn3Kr3M/image.jpg" alt="" />
+          <img data-drop-image="atelier-3" src="https://i.ibb.co/0RZKhkrG/image.jpg" alt="" />
+          <img data-drop-image="atelier-4" src="https://i.ibb.co/SwbP7gXD/image.jpg" alt="" />
+        </div>
+      </div>
+      <!-- Bloc Univers Musical -->
+<div style="background:var(--paper-soft);padding:32px 28px;border-radius:24px;margin-top:28px !important;backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:24px;">
+  
+  <p style="text-align:center;font-family:Fraunces,serif;font-style:italic;font-size:1.15rem;color:#1a1a1a !important;margin:0;line-height:1.5;">
+    « En plus de l'expression plastique, la musique occupe une place centrale dans mon processus créatif, comme un souffle parallèle à la peinture. »
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;">
+    
+    <!-- Colonne 1 : Son Groupe -->
+  <div style="background:rgba(255,255,255,0.4);padding:20px;border-radius:18px;border:1px solid rgba(0,0,0,0.08);display:flex;flex-direction:column;height:100%;">
+    <div>
+      <h3 style="font-family:Fraunces,serif;font-style:italic;font-size:1.15rem;margin-top:0;margin-bottom:12px;color:#1a1a1a !important;white-space:nowrap;">Mon Groupe — Birkenhead, Half a Band</h3>
+      <p style="font-size:0.95rem;color:#2d3748 !important;margin-bottom:20px;line-height:1.4;">Découvrez l'album <strong style="color: #e99708 !important;">Spare Ones</strong> du groupe de musique auquel j'appartiens :</p>
+    </div>
+
+    <!-- Carte Album Apple Style -->
+    <div style="width: 100%; margin-top: auto; padding: 10px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.6);">
+      <iframe
+      loading="lazy" 
+        style="border: 0; width: 100%; height: 380px; border-radius: 14px; display: block;" 
+        src="https://bandcamp.com/EmbeddedPlayer/album=744159725/size=large/bgcol=ffffff/linkcol=e99708/tracklist=true/artwork=small/transparent=true/" 
+        seamless>
+        <a href="https://halfaband.bandcamp.com/album/spare-ones">Spare ones de Half a Band</a>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Colonne 2 : Inspiration Atelier -->
+  <div style="background:rgba(255,255,255,0.4);padding:20px;border-radius:18px;border:1px solid rgba(0,0,0,0.08);display:flex;flex-direction:column;height:100%;">
+    <div>
+      <h3 style="font-family:Fraunces,serif;font-style:italic;font-size:1.15rem;margin-top:0;margin-bottom:12px;color:#1a1a1a !important;">Musiques inspirantes</h3>
+      <p style="font-size:0.95rem;color:#2d3748 !important;margin-bottom:16px;line-height:1.4;">Les morceaux et ambiances qui m'inspirent lorsque je crée :</p>
+    </div>
+        
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+          <li>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <span>♬ Radiohead - <span style="font-weight:normal;">Paranoid Android</span></span>
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/Lt8AfIeJOxw?si=JB9IIj_oyWgon_Ha" title="Radiohead - Paranoid Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </li>
+          <li>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <span>♬ Jeff Buckley - <span style="font-weight:normal;">Grace</span></span>
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/A3adFWKE9JE?si=4qgSUmgdSAdyS62q" title="Jeff Buckley - Grace" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </li>
+          <li>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <span>♬ Mercury Rev - <span style="font-weight:normal;">The Dark Is Rising</span></span>
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/-iquqEbPhDw?si=glhpGdJhaoKTrLKs" title="Mercury Rev - The Dark Is Rising" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+      <div class="page-customizer" data-page="atelier">
+        <div class="custom-builder">
+          <div class="custom-builder-header">
+            <h3>Blocs personnalisables</h3>
+            <div class="custom-builder-actions">
+              <button class="custom-mode-toggle" type="button">Masquer les contrôles</button>
+              <button class="custom-add-btn" type="button">+ Ajouter une case</button>
+            </div>
+          </div>
+          <div class="custom-cards-canvas" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="section container" style="display:none">
+      <div style="text-align:center;margin-bottom:18px"><div class="label">Playlist</div><h2 style="font-family:Fraunces, serif;font-style:italic">La playlist de la Galerie</h2></div>
+      <div id="tracks"></div>
+    </section>
+
+   <section id="exhibitions" class="section container" style="display:none">
+  <h2 data-edit-key="exhibitions_title" class="editable-text hero-title-single" style="padding:24px 18px;background:var(--paper-soft);border-radius:24px;text-align:center;">Calendrier</h2>
+
+  <!-- Expositions à venir -->
+  <div style="margin-top:28px;padding:0 12px;">
+    <h3 style="font-family: Fraunces, serif; font-style: italic; font-size: 1.4rem; margin-bottom: 12px;">À venir</h3>
+    <div style="background: var(--paper-soft); padding: 18px 24px; border-radius: 16px; color: #1a1a1a !important; font-style: italic; font-weight: 500;">
+      Aucune exposition prévue pour le moment.
+    </div>
+  </div>
+
+  <!-- Expositions passées -->
+  <div style="margin-top: 28px; padding: 0 12px;">
+    <h3 style="font-family: Fraunces, serif; font-style: italic; font-size: 1.4rem; margin-bottom: 12px;">Passées</h3>
+    <div class="expo-card" style="background:var(--paper-soft); padding:20px 24px; border-radius:20px; margin-top:12px; cursor:pointer;" onclick="toggleExpoGallery(this)">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <strong style="display:block; font-size:1.1rem; color:#1a1a1a !important;">Librairie des Volcans</strong>
+      <span style="font-size:0.9rem; color:#333333 !important;">Clermont-Ferrand, France</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="background:rgba(0,0,0,0.08); color:#1a1a1a !important; padding:6px 14px; border-radius:12px; font-size:0.9rem; font-weight:600;">Février 2024</span>
+      <span class="expo-chevron" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:rgba(0, 0, 0, 0.06); color:#1a1a1a !important; font-size:1.1rem; font-weight:bold; transition:transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;">▼</span>
+    </div>
+  </div>
+  
+  <!-- Conteneur animé pour l'accordéon -->
+  <div class="expo-gallery-wrapper" style="display:grid; grid-template-rows:0fr; overflow:hidden; transition:grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin-top 0.3s ease; opacity:0; margin-top:0px;">
+   <div style="min-height:0; overflow:hidden;">
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; padding-top:16px; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="border-radius:14px; overflow:hidden; background:rgba(0,0,0,0.03); box-shadow: 0 4px 12px rgba(0,0,0,0.05); aspect-ratio:4/3;">
+        <img src="images/expo_volcans_1.jpg" alt="Exposition Volcans 1" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <div style="border-radius:14px; overflow:hidden; background:rgba(0,0,0,0.03); box-shadow: 0 4px 12px rgba(0,0,0,0.05); aspect-ratio:4/3;">
+        <img src="images/expo_volcans_2.jpg" alt="Exposition Volcans 2" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <div style="border-radius:14px; overflow:hidden; background:rgba(0,0,0,0.03); box-shadow: 0 4px 12px rgba(0,0,0,0.05); aspect-ratio:4/3;">
+        <img src="images/expo_volcans_3.jpg" alt="Exposition Volcans 3" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <div style="border-radius:14px; overflow:hidden; background:rgba(0,0,0,0.03); box-shadow: 0 4px 12px rgba(0,0,0,0.05); aspect-ratio:4/3;">
+        <img src="images/expo_volcans_4.jpg" alt="Exposition Volcans 4" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+    </div>
+    <!-- Carte lien presse -->
+<a href="https://share.google/aOUCBqUziDmxIkLiy" target="_blank" rel="noopener noreferrer" class="expo-press-link" style="
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.9rem;
+">
+  <span>📰 Lire l'article dans <strong>La Montagne</strong></span>
+  <span style="font-size: 1.1rem;">↗</span>
+</a>
+   </div>
+  </div>
+</div>
+  </div>
+</section>
+
+   <section id="custom" class="section container" style="display:none">
+  <h2 data-edit-key="custom_title" class="editable-text hero-title-single" style="padding:24px 18px;background:var(--paper-soft);border-radius:24px;text-align:center;">Une idée en tête ?</h2>
+  
+  <form action="https://formspree.io/f/xyezzvyd" method="POST" style="background:var(--paper-soft);padding:32px 28px;border-radius:24px;margin-top:28px;backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <input name="nom" placeholder="Nom" required style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,0.12);border-radius:14px;background:rgba(255,255,255,0.65);">
+        <input name="email" placeholder="Email" type="email" required style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,0.12);border-radius:14px;background:rgba(255,255,255,0.65);">
+      </div>
+      <textarea name="message" placeholder="Détails du projet (Taille, Série, Couleurs, etc...)" required style="width:100%;height:120px;padding:14px 16px;border:1px solid rgba(0,0,0,0.12);border-radius:14px;background:rgba(255,255,255,0.65);"></textarea>
+      <button type="submit" style="align-self:flex-start;padding:14px 28px;border:none;border-radius:14px;background:var(--ink);color:#fff;font-weight:600;font-size:0.95rem;cursor:pointer;">Envoyer la demande</button>
+    </form>
+</section>
+
+    <section id="vip" class="section container" style="display:none">
+  <h2 data-edit-key="vip_title" class="editable-text hero-title-single" style="padding:24px 18px;background:var(--paper-soft);border-radius:24px;text-align:center;">Espace VIP</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:stretch;margin-top:28px;">
+    <!-- Bloc Avantages -->
+    <div style="padding:4px 12px;">
+      <h3 style="font-family: Fraunces, serif; font-style: italic; font-size: 1.4rem; margin-bottom: 16px;">Avantages exclusifs</h3>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:var(--paper-soft);padding:14px 18px;border-radius:16px;color:#1a1a1a !important;font-weight:500;">
+          ✦ Avant-première de 48h sur les nouvelles œuvres
+        </div>
+        <div style="background:var(--paper-soft);padding:14px 18px;border-radius:16px;color:#1a1a1a !important;font-weight:500;">
+          ✦ Invitation personnelle aux vernissages privés
+        </div>
+        <div style="background:var(--paper-soft);padding:14px 18px;border-radius:16px;color:#1a1a1a !important;font-weight:500;">
+          ✦ Remise permanente de 10% sur toute la galerie
+        </div>
+        <div style="background:var(--paper-soft);padding:14px 18px;border-radius:16px;color:#1a1a1a !important;font-weight:500;">
+          ✦ Livraison sécurisée & assurée offerte dès 500 €
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloc Connexion Membre (Style Apple) -->
+    <div style="background:var(--paper-soft);padding:28px 24px;border-radius:24px;display:flex;flex-direction:column;justify-content:center;gap:16px;backdrop-filter:blur(10px);">
+      <h4 style="font-family:Fraunces, serif;font-style:italic;font-size:1.3rem;margin:0;color:#1a1a1a !important;text-align:center;">Connexion Membre</h4>
+      <input id="vipCodeInput" placeholder="Code Invitation (VIP-XXXX-XXXX)" autocomplete="off" autocapitalize="characters" spellcheck="false" style="width:100%;padding:12px;border:1px solid rgba(0,0,0,0.15);border-radius:12px;background:rgba(255,255,255,0.6);color:#1a1a1a !important;font-size:0.95rem;">
+      <button id="vipLoginBtn" type="button" style="width:100%;padding:12px;border:none;border-radius:12px;background:var(--ink);color:#fff;font-weight:600;cursor:pointer;">S'authentifier</button>
+      <div id="vipStatus" style="min-height:1.2em;font-size:0.9rem;text-align:center;color:#1a1a1a !important;"></div>
+  </div>
+</section>
+      <div class="page-customizer" data-page="vip">
+        <div class="custom-builder">
+          <div class="custom-builder-header">
+            <h3>Blocs personnalisables</h3>
+            <div class="custom-builder-actions">
+              <button class="custom-mode-toggle" type="button">Masquer les contrôles</button>
+              <button class="custom-add-btn" type="button">+ Ajouter une case</button>
+            </div>
+          </div>
+          <div class="custom-cards-canvas" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="section container" style="display:none">
+      <div id="detailsContent" class="details"></div>
+    </section>
+
+  </main>
+
+  <div id="cartOverlay" class="overlay"></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div style="padding:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center">
+      <h3 style="font-family:Fraunces, serif;font-style:italic">Votre sélection</h3>
+      <button id="closeCart">Fermer</button>
+    </div>
+    <div id="cartItems" style="padding:18px;overflow:auto;height:calc(100% - 140px)"></div>
+  </aside>
+
+  
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        <h3 style="font-family:Fraunces, serif;font-style:italic">Olivier Studio</h3>
+        <div class="label">© 2026 — Clermont-Ferrand, France</div>
+      </div>
+      <div style="display:flex;gap:18px;align-items:center">
+        <div>
+          <div class="label">Contact</div>
+          <div><a href="mailto:contact@oliviersalvatge-galerie.fr">olivier.salvatge@yahoo.fr</a></div>
+        </div>
+        <div>
+          <div class="label">Suivre</div>
+          <div><a href="https://www.instagram.com/olivier_salvatge" target="_blank">Instagram</a></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;padding:0 24px 24px">
+      <button id="exportHtmlBtn" class="export-btn" type="button">Enregistrer le site HTML</button>
+    </div>
+  </footer>
+
+  <div id="artworkModal" class="glass-modal" aria-hidden="true">
+    <div class="glass-modal-card">
+      <h3>Ajouter un tableau</h3>
+      <form id="artworkForm" class="glass-modal-form">
+        <div class="drop-zone full" id="artworkDropZone" tabindex="0">
+          <span style="color:rgba(255,255,255,0.68)">Glisser une image ici</span>
+          <img id="artworkPreview" alt="aperçu" style="display:none;max-width:100%;max-height:120px" />
+        </div>
+        <input id="artworkTitle" class="full" type="text" placeholder="Titre du tableau" required />
+        <input id="artworkDimensions" type="text" placeholder="Dimensions" required />
+        <input id="artworkSeries" type="text" placeholder="Série / Collection" required />
+        <input id="artworkPrice" type="number" min="0" step="1" placeholder="Prix (€)" required />
+        <div class="glass-modal-actions full">
+          <button type="button" id="cancelArtworkBtn">Annuler</button>
+          <button type="submit">Ajouter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const PAGE_SHADERS = {
+  gallery:      { colors: ["#432DEB", "#5C99DB", "#C723B2", "#B653CA"], speed: 2.6 },
+  atelier:      { colors: ["#EBCC2D", "#F0B73D", "#ED651D", "#E6563D"], speed: 2.6 },
+  exhibitions:  { colors: ["#4626A3", "#3B6797", "#287C18", "#2FDA51"], speed: 2.6 },
+  custom:       { colors: ["#1A0B2E", "#6B2D5C", "#E05297", "#26C4EC"], speed: 2.6 },
+  about:        { colors: ["#F7B267", "#F79D65", "#9B5DE5", "#5C54A4"], speed: 2.6 },
+  vip:          { colors: ["#0B2545", "#134074", "#8DA9C4", "#52B788"], speed: 2.6 }
+};
+    // Data (adapted from the JSX)
+    const MY_INFO = {
+  name: "Olivier Salvatge",
+  phone: "+33 6 15 74 33 86",
+  email: "olivier.salvatge@yahoo.fr",
+  location: "Clermont-Ferrand, France",
+  instagram: "olivier_salvatge",
+  instagramUrl: "https://www.instagram.com/olivier_salvatge",
+
+  whoAmITitle: "Qui suis-je ?",
+  about: `Je m'appelle Olivier Salvatge, je suis né en 1973 et je suis aujourd'hui père de deux garçons. J'ai développé dès mon plus jeune âge un rapport très particulier à la création.\n\nJ'ai toujours été un peu dans les nuages. Petit, je préférais aisément être dans mes songes qu'à l'écoute des adultes, des mensonges et des paroles des bien-pensants.\n\nLe soir, je me refugiais dans ma chambre pour dessiner ou écrire des chansons, des poèmes ou des nouvelles.\n\nCette évasion, j'en ai toujours ressenti le besoin. Sur mon parcours, j'ai expérimenté de nouvelles façons de m'extraire du monde : les percussions, la batterie, la peinture, le piano, la composition... Toutes formes d'expression !`,
+
+  myPaintingTitle: "Ma peinture",
+  aboutPainting: `Je peins des œuvres abstraites guidées par une recherche simple et essentielle : créer une sensation d'apaisement. Dans mes tableaux, les couleurs se rencontrent, se superposent et se transforment comme dans un kaléidoscope. Elles semblent parfois libres, presque imprévisibles, mais elles trouvent toujours un équilibre. C'est dans cet équilibre que naît une forme de sérénité.`,
+      manifesto: `Je peins pour atteindre un état plutôt que pour représenter une forme. Mon travail s’inscrit dans une recherche sensible où l’image n’est pas un but, mais un passage. L’abstraction me permet de me libérer du réel immédiat pour explorer une dimension plus intérieure, presque méditative, où la couleur devient langage et la matière, respiration.
+
+Ce qui m’importe avant tout, c’est la sensation d’apaisement qui émane de l’œuvre. Non pas un apaisement vide ou passif, mais une sérénité active, profonde, qui se construit dans la vibration même des couleurs. Elles se rencontrent, se mêlent, parfois s’entrechoquent comme dans un kaléidoscope en mouvement, mais finissent par trouver une forme d’équilibre. Cet équilibre n’est jamais figé : il est vivant, instable, et c’est précisément cette tension douce qui ouvre un espace de contemplation.
+
+Dans cette démarche, je me sens proche des réflexions de Wassily Kandinsky, pour qui la couleur possédait une résonance intérieure capable de toucher directement l’âme, indépendamment de toute figuration. De même, l’approche de Mark Rothko, avec ses champs colorés immersifs, m’inspire dans cette volonté de créer une expérience émotionnelle pure, presque silencieuse, où le regardeur est invité à ralentir et à ressentir plutôt qu’à analyser.
+
+Mon travail dialogue aussi, d’une certaine manière, avec les recherches sur la perception et la phénoménologie de l’art, notamment chez Maurice Merleau-Ponty, qui voyait dans la peinture un moyen d’accéder à une forme de présence au monde plus immédiate, plus incarnée. Ainsi, mes compositions ne cherchent pas à raconter une histoire, mais à instaurer une relation : un moment suspendu entre l’œuvre et celui qui la regarde.
+
+Peindre devient alors un acte d’équilibre entre lâcher-prise et intention. Les couleurs se déploient librement, mais leur organisation répond à une intuition précise : celle de guider le regard vers un état de calme. Cette sérénité n’est pas imposée, elle émerge progressivement, comme une évidence discrète.
+
+En ce sens, ma peinture s’inscrit dans une recherche contemporaine où l’art ne se limite plus à la représentation ou au concept, mais devient une expérience à vivre. Une expérience intime, sensorielle, où chacun peut projeter son propre rythme, son propre silence.
+
+Créer, pour moi, c’est offrir un espace. Un espace où le tumulte se transforme en harmonie, où la complexité visuelle ouvre paradoxalement sur une forme de paix intérieure.`
+    };
+
+    const stripe = Stripe('pk_test_51UG3DCBPjgNJlAym9H5FMSE9Yac3e8emhU9zYQsknnCQZnBuL7Zu8EgpSbnuALFBZs5ofNEXMlggjPkJ4fcoxv9N00r8kUt8GE');
+    const INITIAL_ARTWORKS = [
+      {id:5,title:"Cartographie",price:800,category:"Peinture",stock:1,series:"Explosions",dimensions:"100x100 cm",year:2009,description:"Techniques mixtes",mainImage:"images/cartographie-nobg.png",images:["images/cartographie-nobg.png","https://i.ibb.co/cKxwJtt9/P1310454.jpg","images/cartographie-salon.jpg"]},
+      {
+    id: "mordore",
+    title: "Mordoré",
+    series: "Kaléidoscope",
+    price: 730,
+    dimensions: "70×90 cm",
+    year: 2009,
+    technique: "Techniques mixtes",
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/oeuvre2.png",
+    images: [
+      "images/oeuvre2.png",
+      "images/oeuvre2_zoom.jpg",
+      "images/salon-mordore.jpg"
+    ]
+  },
+  {
+    id: "chaopolis",
+    title: "Chaopolis",
+    series: "Kaléidoscope",
+    dimensions: "80×80 cm",
+    year: 2022,
+    medium: "Techniques mixtes",
+    price: 830,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/chaopolis.png",
+    images: [
+      "images/chaopolis.png",
+      "images/chaopolis-zoom.jpg",
+      "images/salon-chaopolis.jpg"
+    ]
+  },
+  {
+    id: "borealis",
+    title: "Borealis",
+    series: "Pays Sage",
+    dimensions: "50×70 cm",
+    year: 2023,
+    medium: "Techniques mixtes",
+    price: 490,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/borealis.png",
+    images: [
+      "images/borealis.png",
+      "images/borealis-zoom.jpg",
+      "images/salon-borealis.jpg"
+    ]
+  },
+  {
+    id: "la-boucherie",
+    title: "La Boucherie",
+    series: "Compartimentation",
+    dimensions: "100×80 cm",
+    year: 2007,
+    medium: "Techniques mixtes",
+    price: 760,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/laboucherie.png",
+    images: [
+      "images/laboucherie.png",
+      "images/laboucherie-zoom.jpg",
+      "images/salon-laboucherie.jpg"
+    ]
+  },
+  {
+    id: "les-mots-bleus",
+    title: "Les Mots Bleus",
+    series: "Kaléidoscope",
+    dimensions: "80×100 cm",
+    year: 2003,
+    medium: "Techniques mixtes",
+    price: 750,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/lesmotsbleus.png",
+    images: [
+      "images/lesmotsbleus.png",
+      "images/lesmotsbleus-zoom.jpg",
+      "images/salon-lesmotsbleus.jpg"
+    ]
+  },
+  {
+    id: "fade-out",
+    title: "Fade Out",
+    series: "Kaléidoscope",
+    dimensions: "80×100 cm",
+    year: 2022,
+    medium: "Techniques mixtes",
+    price: 730,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/fadeout.png",
+    images: [
+      "images/fadeout.png",
+      "images/fadeout-zoom.jpg",
+      "images/salon-fadeout.jpg"
+    ]
+  },
+  {
+    id: "ashes-to-ashes",
+    title: "Ashes To Ashes",
+    series: "Kaléidoscope",
+    dimensions: "80×80 cm",
+    year: 2023,
+    medium: "Techniques mixtes",
+    price: 790,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/ashestoashes.png",
+    images: [
+      "images/ashestoashes.png",
+      "images/ashestoashes-zoom.jpg",
+      "images/salon-ashestoashes.jpg"
+    ]
+  },
+  {
+    id: "domus-1",
+    title: "Dômus 1",
+    series: "Pays Sage",
+    dimensions: "80×80 cm",
+    year: 2022,
+    medium: "Techniques mixtes",
+    price: 790,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/domus1.png",
+    images: [
+      "images/domus1.png",
+      "images/domus1-zoom.jpg",
+      "images/salon-domus1.jpg"
+    ]
+  },
+  {
+    id: "day-dream",
+    title: "Day Dream",
+    series: "Kaléidoscope",
+    dimensions: "100×80 cm",
+    year: 2023,
+    medium: "Techniques mixtes",
+    price: 830,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/daydream.png",
+    images: [
+      "images/daydream.png",
+      "images/daydream-zoom.jpg",
+      "images/salon-daydream.jpg"
+    ]
+  },
+{
+    id: "interstellar",
+    title: "Interstellar",
+    series: "Univer",
+    dimensions: "46x55 cm",
+    year: 2001,
+    medium: "Techniques mixtes",
+    price: 450,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/interstellar.png",
+    images: [
+      "images/interstellar.png",
+      "images/interstellar-zoom.jpg",
+      "images/salon-interstellar.jpg"
+    ]
+  },
+  {
+    id: "etages",
+    title: "Étages",
+    series: "Compartimentation",
+    dimensions: "65x80 cm",
+    year: 2019,
+    medium: "Techniques mixtes",
+    price: 720,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/etages.png",
+    images: [
+      "images/etages.png",
+      "images/etages-zoom.jpg",
+      "images/salon-etages.jpg"
+    ]
+  },
+  {
+    id: "dix-visions",
+    title: "Dix Visions",
+    series: "Kaléidoscope",
+    dimensions: "70x90 cm",
+    year: 2003,
+    medium: "Techniques mixtes",
+    price: 760,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/dixvisions.png",
+    images: [
+      "images/dixvisions.png",
+      "images/dixvisions-zoom.jpg",
+      "images/salon-dixvisions.jpg"
+    ]
+  },
+  {
+    id: "graphie",
+    title: "Graphie",
+    series: "Hors Série",
+    dimensions: "50x70 cm",
+    year: 2006,
+    medium: "Techniques mixtes",
+    price: 490,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/graphie.png",
+    images: [
+      "images/graphie.png",
+      "images/graphie-zoom.jpg",
+      "images/salon-graphie.jpg"
+    ]
+  },
+  {
+    id: "kosmos",
+    title: "Kosmos",
+    series: "Univer",
+    dimensions: "70x50 cm",
+    year: 2002,
+    medium: "Techniques mixtes",
+    price: 550,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/kosmos.png",
+    images: [
+      "images/kosmos.png",
+      "images/kosmos-zoom.jpg",
+      "images/salon-kosmos.jpg"
+    ]
+  },
+  {
+    id: "jean-genie",
+    title: "Jean Genie",
+    series: "Compartimentation",
+    dimensions: "50x70 cm",
+    year: 2001,
+    medium: "Techniques mixtes",
+    price: 490,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/compartimentation.png",
+    images: [
+      "images/compartimentation.png",
+      "images/compartimentation-zoom.jpg",
+      "images/salon-compartimentation.jpg"
+    ]
+  },
+  {
+    id: "et-cae-terra",
+    title: "Et Cae Terra",
+    series: "Pays Sage",
+    dimensions: "50x100 cm",
+    year: 2023,
+    medium: "Techniques mixtes",
+    price: 620,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/etcaeterra.png",
+    images: [
+      "images/etcaeterra.png",
+      "images/etcaeterra-zoom.jpg",
+      "images/salon-etcaeterra.jpg"
+    ]
+  },
+  {
+    id: "au-soleil",
+    title: "Au Soleil",
+    series: "Kaléidoscope",
+    dimensions: "90x70 cm",
+    year: 2005,
+    medium: "Techniques mixtes",
+    price: 690,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/ausoleil.png",
+    images: [
+      "images/ausoleil.png",
+      "images/ausoleil-zoom.jpg",
+      "images/salon-ausoleil.jpg"
+    ]
+  },
+  {
+    id: "bleu-de-chauffe",
+    title: "Bleu De Chauffe",
+    series: "Kaléidoscope",
+    dimensions: "70x90 cm",
+    year: 2023,
+    medium: "Techniques mixtes",
+    price: 790,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/bleudechauffe.png",
+    images: [
+      "images/bleudechauffe.png",
+      "images/bleudechauffe-zoom.jpg",
+      "images/salon-bleudechauffe.jpg"
+    ]
+  },
+  {
+    id: "cyanotype",
+    title: "Cyanotype",
+    series: "Kaléidoscope",
+    dimensions: "80x100 cm",
+    year: 2023,
+    medium: "Techniques mixtes",
+    price: 790,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/cyanotype.png",
+    images: [
+      "images/cyanotype.png",
+      "images/cyanotype_zoom.jpg",
+      "images/salon-cyanotype.jpg"
+    ]
+  },
+  {
+    id: "fire-light",
+    title: "Fire Light",
+    series: "Explosions",
+    dimensions: "70x90 cm",
+    year: 2004,
+    medium: "Techniques mixtes",
+    price: 730,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/firelight.png",
+    images: [
+      "images/firelight.png",
+      "images/firelight-zoom.jpg",
+      "images/salon-firelight.jpg"
+    ]
+  },
+  {
+    id: "eclats-de-vert",
+    title: "Éclats De Vert",
+    series: "Kaléidoscope",
+    dimensions: "80x100 cm",
+    year: 2000,
+    medium: "Techniques mixtes",
+    price: 860,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/eclatsdevert.png",
+    images: [
+      "images/eclatsdevert.png",
+      "images/eclatsdevert-zoom.jpg",
+      "images/salon-eclatsdevert.jpg"
+    ]
+  },
+  {
+    id: "sang-dencre",
+    title: "Sang D'Encre",
+    series: "Kaléidoscope",
+    dimensions: "80x100 cm",
+    year: 2004,
+    medium: "Techniques mixtes",
+    price: 790,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/sangdencre.png",
+    images: [
+      "images/sangdencre.png",
+      "images/sangdencre-zoom.jpg",
+      "images/salon-sangdencre.jpg"
+    ]
+  },
+  {
+    id: "sang-mele",
+    title: "Sang Mêlé",
+    series: "Kaléidoscope",
+    dimensions: "80x100 cm",
+    year: 2003,
+    medium: "Techniques mixtes",
+    price: 790,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/sangmele.png",
+    images: [
+      "images/sangmele.png",
+      "images/sangmele-zoom.jpg",
+      "images/salon-sangmele.jpg"
+    ]
+  },
+  {
+    id: "meteore",
+    title: "Météore",
+    series: "Kaléidoscope",
+    dimensions: "40x50 cm",
+    year: 2003,
+    medium: "Techniques mixtes",
+    price: 570,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/meteore.png",
+    images: [
+      "images/meteore.png",
+      "images/meteore-zoom.jpg",
+      "images/salon-meteore.jpg"
+    ]
+  },
+  {
+    id: "window",
+    title: "Window",
+    series: "Kaléidoscope",
+    dimensions: "50x60 cm",
+    year: 2003,
+    medium: "Techniques mixtes",
+    price: 620,
+    stock: 1,
+    description: "Techniques mixtes",
+    mainImage: "images/window.png",
+    images: [
+      "images/window.png",
+      "images/window-zoom.jpg",
+      "images/salon-window.jpg"
+    ]
+  }
+];
+
+    const TRACKS = [
+      {id:'b1',title:'I See Home',artist:'Birkenhead - Half a Band',url:'https://res.cloudinary.com/dhl8vj0lv/video/upload/v1775424616/3-I_see_home_ydz1ib.mp3'},
+      {id:'b2',title:'Twilight on Mersey',artist:'Birkenhead - Half a Band',url:'https://res.cloudinary.com/dhl8vj0lv/video/upload/v1775424570/Twilight_on_mersey_-_Private_Joe_2018_ui2cea.mp3'},
+      {id:'b3',title:'Useless',artist:'Birkenhead - Half a Band',url:'https://res.cloudinary.com/dhl8vj0lv/video/upload/v1775424195/useless_1_iaj72e.mp3'}
+    ];
+
+    const STORAGE_KEY = 'siteEditorState';
+
+    function loadSavedSiteState(){
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : { texts:{}, artworks:[], images:{} };
+      } catch (e) {
+        return { texts:{}, artworks:[], images:{} };
+      }
+    }
+
+    function saveSiteState(){
+      const texts = {};
+      document.querySelectorAll('.editable-text').forEach((el) => {
+        const key = el.dataset.editKey;
+        if (key) texts[key] = el.textContent.trim();
+      });
+      const textPositions = {};
+      document.querySelectorAll('.editable-text').forEach((el) => {
+        const key = el.dataset.editKey || el.id || ('text-pos-' + Math.random().toString(36).slice(2,9));
+        const x = Number(el.dataset.dragX || 0);
+        const y = Number(el.dataset.dragY || 0);
+        textPositions[key] = { x, y };
+      });
+      const navLabels = {};
+      document.querySelectorAll('#navbar .nav-links button[data-view]').forEach((btn) => {
+        navLabels[btn.dataset.view] = btn.textContent.trim();
+      });
+      const images = {};
+      document.querySelectorAll('[data-drop-image]').forEach((img) => {
+        const key = img.dataset.dropImage;
+        if (key && img.src) images[key] = img.src;
+      });
+      const resizableBlocks = {};
+      document.querySelectorAll('.editable-text, .custom-card, .custom-card-body, .resizable-block').forEach((el) => {
+        if (el.closest('#atelier [data-drop-image]') || el.hasAttribute('data-drop-image')) return;
+        const id = el.dataset.resizeId || el.dataset.editKey || el.id || ('block-' + Math.random().toString(36).slice(2,9));
+        if (!el.dataset.resizeId && !el.dataset.editKey && !el.id) {
+          el.dataset.resizeId = id;
+        }
+        const rect = el.getBoundingClientRect();
+        resizableBlocks[id] = {
+          width: Math.max(80, Math.round(rect.width)),
+          height: Math.max(40, Math.round(rect.height)),
+          left: Math.round(rect.left),
+          top: Math.round(rect.top)
+        };
+      });
+      const pageCustomCards = {};
+      document.querySelectorAll('.page-customizer').forEach((builder) => {
+        const page = builder.dataset.page;
+        pageCustomCards[page] = Array.from(builder.querySelectorAll('.custom-card')).map((card) => ({
+          id: Number(card.dataset.cardId),
+          x: Number((card.style.left || '0').replace('px','')) || 0,
+          y: Number((card.style.top || '0').replace('px','')) || 0,
+          width: Number((card.style.width || '260').replace('px','')) || 260,
+          height: Number((card.style.height || '220').replace('px','')) || 220,
+          text: card.querySelector('.custom-card-body') ? card.querySelector('.custom-card-body').textContent.trim() : '',
+          image: card.querySelector('.custom-card-image-preview') && card.querySelector('.custom-card-image-preview').style.display !== 'none' ? card.querySelector('.custom-card-image-preview').src : ''
+        }));
+      });
+      const payload = {
+        texts,
+        textPositions,
+        artworks: state.artworks,
+        images,
+        navLabels,
+        pageCustomCards,
+        resizableBlocks,
+        version: 'cms-local-1'
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function hydrateSiteState(){
+      const saved = loadSavedSiteState();
+      if (saved.texts) {
+        Object.entries(saved.texts).forEach(([key, value]) => {
+          const el = document.querySelector('[data-edit-key="' + key + '"]');
+          if (el && typeof value === 'string' && value.trim() !== '') {
+            el.textContent = value;
+          }
+        });
+      }
+      if (saved.navLabels) {
+        Object.entries(saved.navLabels).forEach(([view, value]) => {
+          const btn = document.querySelector('#navbar .nav-links button[data-view="' + view + '"]');
+          if (btn && typeof value === 'string') btn.textContent = value;
+        });
+      }
+      if (saved.images) {
+        Object.entries(saved.images).forEach(([key, value]) => {
+          const el = document.querySelector('[data-drop-image="' + key + '"]');
+          if (el && typeof value === 'string') el.src = value;
+        });
+      }
+      if (saved.textPositions) {
+        Object.entries(saved.textPositions).forEach(([key, pos]) => {
+          const el = document.querySelector('[data-edit-key="' + key + '"]') || document.getElementById(key);
+          if (!el) return;
+          const x = Number(pos && pos.x ? pos.x : 0);
+          const y = Number(pos && pos.y ? pos.y : 0);
+          el.dataset.dragX = String(x);
+          el.dataset.dragY = String(y);
+          el.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+        });
+      }
+      if (saved.resizableBlocks) {
+        Object.entries(saved.resizableBlocks).forEach(([id, metrics]) => {
+          const el = document.querySelector('[data-resize-id="' + id + '"]') || document.querySelector('[data-edit-key="' + id + '"]');
+          if (!el) return;
+          if (el.closest('#atelier [data-drop-image]') || el.hasAttribute('data-drop-image')) return;
+          if (typeof metrics.width === 'number') el.style.width = metrics.width + 'px';
+          if (typeof metrics.height === 'number') el.style.height = metrics.height + 'px';
+        });
+      }
+      state.pageCustomCards = saved.pageCustomCards || {};
+      if (Array.isArray(saved.artworks) && saved.artworks.length) {
+        state.artworks = saved.artworks;
+      }
+    }
+
+    function attachResizeHandles(){
+      document.querySelectorAll('.resizable-block').forEach((el) => {
+        if (el.querySelector('.resize-handle')) return;
+        if (el.closest('#navbar')) return;
+        if (el.closest('.search-shell')) return;
+        const handle = document.createElement('div');
+        handle.className = 'resize-handle';
+        handle.setAttribute('aria-label', 'Redimensionner');
+        handle.addEventListener('pointerdown', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const startWidth = el.offsetWidth;
+          const startHeight = el.offsetHeight;
+          const startX = event.clientX;
+          const startY = event.clientY;
+          el.classList.add('active-resize');
+          const move = (moveEvent) => {
+            const deltaX = moveEvent.clientX - startX;
+            const deltaY = moveEvent.clientY - startY;
+            const minWidth = Number(el.dataset.minWidth || 120);
+            const minHeight = Number(el.dataset.minHeight || 60);
+            const nextWidth = Math.max(minWidth, startWidth + deltaX);
+            const nextHeight = Math.max(minHeight, startHeight + deltaY);
+            el.style.width = nextWidth + 'px';
+            el.style.height = nextHeight + 'px';
+            el.dataset.resizeWidth = String(nextWidth);
+            el.dataset.resizeHeight = String(nextHeight);
+          };
+          const stop = () => {
+            el.classList.remove('active-resize');
+            window.removeEventListener('pointermove', move);
+            window.removeEventListener('pointerup', stop);
+            saveSiteState();
+          };
+          window.addEventListener('pointermove', move);
+          window.addEventListener('pointerup', stop);
+        });
+        el.appendChild(handle);
+      });
+    }
+
+    // State
+    let state = { view:'home', selected:null, cart:[], currentTrack:null, isPlaying:false, artworks: [], customCards: [] };
+    state.artworks = loadSavedSiteState().artworks.length ? loadSavedSiteState().artworks : INITIAL_ARTWORKS.slice();
+    state.customCards = loadSavedSiteState().customCards || [];
+
+    const DEFAULT_SHADER_CONFIG = {
+      home: { palette:['#432deb','#5c99db','#c723b2','#b653ca'], speed:1.6 },
+      gallery: { palette:['#432deb','#5c99db','#c723b2','#b653ca'], speed:1.6 },
+      atelier: { palette:['#432deb','#5c99db','#c723b2','#b653ca'], speed:0.8 },
+      exhibitions: { palette:['#4626a3','#8ec5ff','#ff7fc5','#ffd6a1'], speed:0.8 },
+      custom: { palette:['#2c5d77','#9ae4ff','#dca0ff','#f7e7bf'], speed:0.9 },
+      about: { palette:['#1f4d8c','#6bd3ff','#9cf3d8','#f9d58c'], speed:0.85 },
+      vip: { palette:['#3d2b74','#a98bff','#ff7ca8','#ffe3a1'], speed:0.8 },
+      details: { palette:['#432deb','#5c99db','#c723b2','#b653ca'], speed:0.8 }
+    };
+
+    // Atelier palette requested by the user; saved per page and kept isolated from other sections.
+    DEFAULT_SHADER_CONFIG.atelier = {
+      palette:['#432DEB','#5C99DB','#C723B2','#B653CA'],
+      speed:0.8
+    };
+
+    function loadShaderConfig(){
+      try {
+        const raw = localStorage.getItem('pageShaderConfig');
+        const merged = JSON.parse(JSON.stringify(DEFAULT_SHADER_CONFIG));
+        if (!raw) return merged;
+        const parsed = JSON.parse(raw);
+        Object.keys(merged).forEach((page) => {
+          if (parsed[page] && Array.isArray(parsed[page].palette) && parsed[page].palette.length === 4) {
+            merged[page] = {
+              palette: parsed[page].palette.slice(0,4),
+              speed: typeof parsed[page].speed === 'number' ? parsed[page].speed : merged[page].speed
+            };
+          }
+        });
+        if (parsed.gallery) {
+          merged.home = {
+            palette: parsed.gallery.palette.slice(0,4),
+            speed: typeof parsed.gallery.speed === 'number' ? parsed.gallery.speed : merged.home.speed
+          };
+        }
+        return merged;
+      } catch (e) {
+        return JSON.parse(JSON.stringify(DEFAULT_SHADER_CONFIG));
+      }
+    }
+
+    const PAGE_SHADER_CONFIG = loadShaderConfig();
+    const SHADER_PANEL_VIEWS = new Set(['home','gallery','atelier','exhibitions','custom','about','vip','details','music']);
+
+    function getCurrentShaderPageKey(){
+      if (state.view === 'home' || state.view === 'gallery') return 'gallery';
+      const key = state.view || 'atelier';
+      return key in PAGE_SHADER_CONFIG ? key : 'atelier';
+    }
+
+    function persistShaderConfig(){
+      try {
+        localStorage.setItem('pageShaderConfig', JSON.stringify(PAGE_SHADER_CONFIG));
+      } catch (e) {
+        // Ignore storage errors silently.
+      }
+    }
+
+    function readCurrentShaderConfigFromControls(){
+      const key = getCurrentShaderPageKey();
+      const config = PAGE_SHADER_CONFIG[key] || (PAGE_SHADER_CONFIG[key] = JSON.parse(JSON.stringify(DEFAULT_SHADER_CONFIG[key] || DEFAULT_SHADER_CONFIG.atelier)));
+      config.speed = Number(shaderSpeedInput ? shaderSpeedInput.value : config.speed);
+      config.palette = shaderColorInputs.map((input) => input.value);
+      return config;
+    }
+
+    function saveCurrentShaderConfig(){
+      const config = readCurrentShaderConfigFromControls();
+      const key = getCurrentShaderPageKey();
+      PAGE_SHADER_CONFIG[key] = config;
+      PAGE_SHADER_CONFIG.home = { palette: config.palette.slice(0, 4), speed: config.speed };
+      PAGE_SHADER_CONFIG.gallery = { palette: config.palette.slice(0, 4), speed: config.speed };
+      persistShaderConfig();
+      updateShaderForCurrentPage();
+    }
+
+    // Elements
+    const views = { home:document.getElementById('home'), gallery:document.getElementById('galerie'), about:document.getElementById('about'), atelier:document.getElementById('atelier'), music:document.getElementById('music'), exhibitions:document.getElementById('exhibitions'), custom:document.getElementById('custom'), vip:document.getElementById('vip'), details:document.getElementById('details') };
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const seriesFilter = document.getElementById('seriesFilter');
+    const sizeFilter = document.getElementById('sizeFilter');
+    const cartBtn = document.getElementById('cartBtn');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartCountEl = document.getElementById('cartCount');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const detailsContent = document.getElementById('detailsContent');
+    const shaderControls = document.getElementById('shaderControls');
+    const shaderPageLabel = document.getElementById('shaderPageLabel');
+    const shaderSpeedInput = document.getElementById('shaderSpeed');
+    const shaderColorInputs = Array.from(document.querySelectorAll('.shader-color'));
+
+    function refreshShaderPanelForPage(){
+      const key = getCurrentShaderPageKey();
+      const config = PAGE_SHADER_CONFIG[key] || PAGE_SHADER_CONFIG.atelier;
+      if (shaderControls) {
+        shaderControls.classList.remove('visible');
+        shaderControls.style.display = 'none';
+      }
+      if (shaderPageLabel) {
+        const labelMap = { home:'Accueil', gallery:'Galerie', atelier:'L\'Atelier', exhibitions:'Expositions', custom:'Sur-Mesure', about:'À Propos', vip:'Collectionneurs', details:'Détails', music:'Playlist' };
+        shaderPageLabel.textContent = labelMap[key] || 'Shader';
+      }
+      if (shaderSpeedInput) shaderSpeedInput.value = String(config.speed);
+      shaderColorInputs.forEach((input, idx) => {
+        if (config.palette[idx]) input.value = config.palette[idx];
+      });
+    }
+
+    function updateShaderForCurrentPage(){
+      const key = getCurrentShaderPageKey();
+      const config = PAGE_SHADER_CONFIG[key] || PAGE_SHADER_CONFIG.atelier;
+      if (PAGE_SHADER_CONFIG.home && PAGE_SHADER_CONFIG.gallery) {
+        PAGE_SHADER_CONFIG.home = { palette: PAGE_SHADER_CONFIG.gallery.palette.slice(0, 4), speed: PAGE_SHADER_CONFIG.gallery.speed };
+      }
+      if (window.shaderController) {
+        window.shaderController.update({ palette: config.palette, speed: config.speed });
+      }
+      const canvas = document.getElementById('shader-global');
+      if (canvas) canvas.style.display = '';
+      document.documentElement.classList.remove('no-shader');
+      refreshShaderPanelForPage();
+    }
+
+    // Init
+    function init(){
+      hydrateSiteState();
+
+      // populate filters
+      const series = ['Toutes les séries', ...new Set(state.artworks.map(a=>a.series))];
+  const sizes = ['Toutes les tailles', ...new Set(state.artworks.map(a=>a.dimensions))];
+  series.forEach(s => { const o = document.createElement('option'); o.value = (s === 'Toutes les séries') ? '' : s; o.textContent = s; o.selected = (s === 'Toutes les séries'); seriesFilter.appendChild(o); });
+  sizes.forEach(s => { const o = document.createElement('option'); o.value = (s === 'Toutes les tailles') ? '' : s; o.textContent = s; o.selected = (s === 'Toutes les tailles'); sizeFilter.appendChild(o); });
+
+      document.querySelectorAll('#navbar .nav-links button[data-view]').forEach((btn) => {
+        btn.setAttribute('contenteditable', 'false');
+        btn.setAttribute('spellcheck', 'false');
+        btn.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            btn.blur();
+          }
+        });
+        btn.addEventListener('input', () => {
+          saveSiteState();
+        });
+      });
+
+      document.querySelectorAll('h1, h2, h3, h4, p, li, blockquote, .label, .muted, .hero-inner > *').forEach((el, index) => {
+        if (!el.closest('#navbar') && !el.closest('.nav-links') && !el.closest('button') && !el.closest('input') && !el.closest('textarea') && !el.closest('.search-shell') && !el.closest('.gallery-grid') && !el.closest('#cartDrawer')) {
+          const key = el.id || 'editable-text-' + index;
+          el.setAttribute('data-edit-key', key);
+          el.dataset.resizeId = el.dataset.resizeId || key;
+          el.setAttribute('contenteditable', 'false');
+          if (el.tagName === 'P' || el.tagName === 'LI' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'H4') {
+            el.setAttribute('spellcheck', 'false');
+          }
+        }
+      });
+
+      document.querySelectorAll('.section.container, .page-customizer, .custom-builder, [data-edit-key], [data-drop-image]').forEach((el) => {
+        if (!el.classList.contains('resizable-block')) {
+        }
+        if (!el.dataset.resizeId && (el.dataset.editKey || el.dataset.dropImage || el.id)) {
+          el.dataset.resizeId = el.dataset.editKey || el.dataset.dropImage || el.id;
+        }
+      });
+
+      document.querySelectorAll('[data-drop-image]').forEach((img) => {
+        img.dataset.resizeId = img.dataset.resizeId || (img.dataset.dropImage || ('img-' + Math.random().toString(36).slice(2,9)));
+        img.setAttribute('draggable', 'true');
+        ['dragover','dragenter'].forEach((eventName) => img.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          img.style.outline = '2px solid rgba(255,255,255,0.35)';
+        }));
+        ['dragleave','drop'].forEach((eventName) => img.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          img.style.outline = 'none';
+        }));
+        img.addEventListener('drop', (event) => {
+          const file = event.dataTransfer && event.dataTransfer.files ? event.dataTransfer.files[0] : null;
+          if (!file || !file.type.startsWith('image/')) return;
+          const reader = new FileReader();
+          reader.onload = (loadEvent) => {
+            img.src = loadEvent.target.result;
+            saveSiteState();
+          };
+          reader.readAsDataURL(file);
+        });
+        img.addEventListener('click', () => {
+          const input = document.createElement('input');
+          input.type = 'file';
+          input.accept = 'image/*';
+          input.onchange = (event) => {
+            const file = event.target.files && event.target.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+            const reader = new FileReader();
+            reader.onload = (loadEvent) => {
+              img.src = loadEvent.target.result;
+              saveSiteState();
+            };
+            reader.readAsDataURL(file);
+          };
+          input.click();
+        });
+      });
+
+      document.querySelectorAll('.editable-text').forEach((el) => {
+        el.addEventListener('input', saveSiteState);
+        if (el.dataset.dragBound === 'true') return;
+        el.dataset.dragBound = 'true';
+        const startDrag = (event) => {
+          if (event.target && event.target.classList && event.target.classList.contains('resize-handle')) return;
+          const activeSelection = window.getSelection ? window.getSelection().toString() : '';
+          if (activeSelection && activeSelection.length > 0) return;
+          if (event.target.closest('a') || event.target.closest('button') || event.target.closest('input') || event.target.closest('textarea')) return;
+          const startX = event.clientX;
+          const startY = event.clientY;
+          const originX = Number(el.dataset.dragX || 0);
+          const originY = Number(el.dataset.dragY || 0);
+          const move = (moveEvent) => {
+            const deltaX = moveEvent.clientX - startX;
+            const deltaY = moveEvent.clientY - startY;
+            const nextX = originX + deltaX;
+            const nextY = originY + deltaY;
+            el.dataset.dragX = String(nextX);
+            el.dataset.dragY = String(nextY);
+            el.style.transform = 'translate(' + nextX + 'px, ' + nextY + 'px)';
+          };
+          const stop = () => {
+            window.removeEventListener('pointermove', move);
+            window.removeEventListener('pointerup', stop);
+            saveSiteState();
+          };
+          window.addEventListener('pointermove', move);
+          window.addEventListener('pointerup', stop);
+        };
+        el.addEventListener('pointerdown', startDrag);
+      });
+
+      attachResizeHandles();
+
+      const saveTextPlacementBtn = document.getElementById('saveTextPlacementBtn');
+      if (saveTextPlacementBtn) {
+        saveTextPlacementBtn.addEventListener('click', () => {
+          saveSiteState();
+        });
+      }
+
+      renderAllPageCustomCards();
+      renderGrid();
+      renderTracks();
+      document.querySelectorAll('.custom-add-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const builder = btn.closest('.page-customizer');
+          const page = builder && builder.dataset.page ? builder.dataset.page : 'custom';
+          const list = state.pageCustomCards[page] || [];
+          const nextId = Date.now();
+          list.push({ id: nextId, x: 12 + (list.length % 3) * 140, y: 12 + Math.floor(list.length / 3) * 140, width: 260, height: 220, text: 'Nouveau contenu', image: '' });
+          state.pageCustomCards[page] = list;
+          renderPageCustomCards(page);
+          saveSiteState();
+        });
+      });
+      document.querySelectorAll('.custom-mode-toggle').forEach((btn) => {
+        const builder = btn.closest('.page-customizer');
+        if (builder) {
+          btn.addEventListener('click', () => {
+            builder.classList.toggle('controls-hidden');
+            renderPageCustomCards(builder.dataset.page);
+          });
+        }
+      });
+      // Navigation: show view and smooth-scroll to its section (account for fixed navbar)
+      document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>{
+        const v = btn.dataset.view;
+        // Show the target view first, then measure and scroll in the next frame
+        setView(v);
+        const sectionEl = views[v];
+        if(!sectionEl) return;
+        requestAnimationFrame(()=>{
+          if(v === 'gallery'){
+            const target = document.getElementById('top-galerie');
+            if(target){
+              const header = document.getElementById('navbar');
+              const headerOffset = header ? header.getBoundingClientRect().height : 0;
+              const elementPosition = target.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 8;
+              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+          } else {
+            const nav = document.getElementById('navbar');
+            const navH = nav ? nav.getBoundingClientRect().height : 0;
+            const top = Math.max(0, sectionEl.getBoundingClientRect().top + window.scrollY - navH - 8);
+            window.scrollTo({top,behavior:'smooth'});
+          }
+        });
+      }));
+      // Smooth-scroll CTA to the galerie start: scroll to inner .gallery-content so title+filters remain visible
+      document.getElementById('discoverBtn').addEventListener('click',()=>{
+        // Show gallery first so measurements are accurate, then scroll in next frame
+        setView('gallery');
+        requestAnimationFrame(()=>{
+          const target = document.getElementById('top-galerie');
+          if(target){
+            const header = document.getElementById('navbar');
+            const headerOffset = header ? header.getBoundingClientRect().height : 0;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 8;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+      searchInput.addEventListener('input',renderGrid);
+      seriesFilter.addEventListener('change',renderGrid);
+      sizeFilter.addEventListener('change',renderGrid);
+      cartBtn.addEventListener('click',openCart);
+      document.getElementById('closeCart').addEventListener('click',closeCart);
+      cartOverlay.addEventListener('click',closeCart);
+
+      const aboutTextEl = document.getElementById('aboutText');
+const manifestoTextEl = document.getElementById('manifestoText');
+if (aboutTextEl) {
+  aboutTextEl.innerHTML = `
+    <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; min-height:856px; font-size:1.02rem; line-height:1.55;">
+      <div>
+        <h3 style="font-size: 1.45rem; margin: 0 0 0.6rem 0; color: inherit;">${MY_INFO.whoAmITitle}</h3>
+        <p style="white-space: pre-line; margin-bottom: 1.5rem;">${MY_INFO.about}</p>
+
+        <h3 style="font-size: 1.45rem; margin: 1.5rem 0 0.6rem 0; color: inherit;">${MY_INFO.myPaintingTitle}</h3>
+        <p style="margin-bottom: 1.5rem;">${MY_INFO.aboutPainting || MY_INFO.manifesto}</p>
+      </div>
+
+      <div style="font-weight: 500; font-size: 1rem; padding-top: 1rem;">
+        <a href="tel:${MY_INFO.phone}" style="color: inherit; text-decoration: underline;">${MY_INFO.phone}</a> — 
+        <a href="${MY_INFO.instagramUrl}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Instagram</a>
+      </div>
+    </div>
+  `;
+}
+if (manifestoTextEl && (!manifestoTextEl.textContent || manifestoTextEl.textContent.trim() === '')) {
+  manifestoTextEl.textContent = MY_INFO.manifesto;
+}
+      if (manifestoTextEl && manifestoTextEl.textContent.trim().length < 200) {
+        manifestoTextEl.textContent = MY_INFO.manifesto;
+      }
+      const atelierQuote = document.querySelector('.atelier-text-card .atelier-quote');
+      if (false && atelierQuote) {
+        let dragOriginX = Number(atelierQuote.dataset.dragX || 0);
+        let dragOriginY = Number(atelierQuote.dataset.dragY || 0);
+        let dragStartX = 0;
+        let dragStartY = 0;
+        let dragging = false;
+        atelierQuote.addEventListener('pointerdown', (event) => {
+          dragging = true;
+          dragStartX = event.clientX;
+          dragStartY = event.clientY;
+          atelierQuote.setPointerCapture(event.pointerId);
+          atelierQuote.style.zIndex = '10';
+        });
+        atelierQuote.addEventListener('pointermove', (event) => {
+          if (!dragging) return;
+          const deltaX = event.clientX - dragStartX;
+          const deltaY = event.clientY - dragStartY;
+          const nextX = Math.max(-220, Math.min(220, dragOriginX + deltaX));
+          const nextY = Math.max(-140, Math.min(140, dragOriginY + deltaY));
+          atelierQuote.style.transform = 'translate(' + nextX + 'px, ' + nextY + 'px)';
+          atelierQuote.dataset.dragX = String(nextX);
+          atelierQuote.dataset.dragY = String(nextY);
+        });
+        const stopDragging = () => {
+          if (!dragging) return;
+          dragging = false;
+          dragOriginX = Number(atelierQuote.dataset.dragX || 0);
+          dragOriginY = Number(atelierQuote.dataset.dragY || 0);
+          atelierQuote.style.zIndex = '';
+        };
+        atelierQuote.addEventListener('pointerup', stopDragging);
+        atelierQuote.addEventListener('pointercancel', stopDragging);
+      }
+      
+
+      
+      const addArtworkModal = document.getElementById('artworkModal');
+      const cancelArtworkBtn = document.getElementById('cancelArtworkBtn');
+      const artworkForm = document.getElementById('artworkForm');
+      const artworkDropZone = document.getElementById('artworkDropZone');
+      const artworkPreview = document.getElementById('artworkPreview');
+      let modalImageData = '';
+
+      
+      cancelArtworkBtn.addEventListener('click', () => {
+        addArtworkModal.classList.remove('open');
+        addArtworkModal.setAttribute('aria-hidden', 'true');
+        artworkForm.reset();
+        modalImageData = '';
+        artworkPreview.style.display = 'none';
+      });
+      addArtworkModal.addEventListener('click', (event) => {
+        if (event.target === addArtworkModal) {
+          cancelArtworkBtn.click();
+        }
+      });
+      ['dragover','dragenter'].forEach((eventName) => artworkDropZone.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        artworkDropZone.style.borderColor = 'rgba(255,255,255,0.62)';
+      }));
+      ['dragleave','drop'].forEach((eventName) => artworkDropZone.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        artworkDropZone.style.borderColor = 'rgba(255,255,255,0.35)';
+      }));
+      artworkDropZone.addEventListener('drop', (event) => {
+        const file = event.dataTransfer && event.dataTransfer.files ? event.dataTransfer.files[0] : null;
+        if (!file || !file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          modalImageData = evt.target.result;
+          artworkPreview.src = modalImageData;
+          artworkPreview.style.display = 'block';
+          artworkDropZone.querySelector('span').style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      });
+      artworkDropZone.addEventListener('click', () => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.onchange = (event) => {
+          const file = event.target.files && event.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            modalImageData = evt.target.result;
+            artworkPreview.src = modalImageData;
+            artworkPreview.style.display = 'block';
+            artworkDropZone.querySelector('span').style.display = 'none';
+          };
+          reader.readAsDataURL(file);
+        };
+        input.click();
+      });
+      artworkForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const title = document.getElementById('artworkTitle').value.trim();
+        const dimensions = document.getElementById('artworkDimensions').value.trim();
+        const series = document.getElementById('artworkSeries').value.trim();
+        const price = Number(document.getElementById('artworkPrice').value);
+        if (!title || !dimensions || !series || !price && price !== 0 || !modalImageData) return;
+        const newArt = {
+          id: Date.now(),
+          title,
+          price,
+          category: 'Peinture',
+          stock: 1,
+          series,
+          dimensions,
+          year: new Date().getFullYear(),
+          description: 'Œuvre ajoutée depuis l’éditeur local.',
+          mainImage: modalImageData,
+          images: [modalImageData]
+        };
+        state.artworks.unshift(newArt);
+        saveSiteState();
+        renderGrid();
+        updateArtworkFilters();
+        cancelArtworkBtn.click();
+      });
+
+      document.getElementById('exportHtmlBtn').addEventListener('click', () => {
+        saveSiteState();
+        const html = '<!doctype html>' + document.documentElement.outerHTML;
+        const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'portfolio_d_art_contemporain-export.html';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+
+      // Initialize the ShaderGradient for the home/gallery background.
+      // Use the same gallery palette so the home section transitions seamlessly.
+      try{ window.shaderController = setupShaderGradient({ palette: PAGE_SHADER_CONFIG.gallery.palette, speed: PAGE_SHADER_CONFIG.gallery.speed }); }catch(e){console.warn('Shader init failed',e)}
+
+      shaderSpeedInput && shaderSpeedInput.addEventListener('input', (event) => {
+        const key = getCurrentShaderPageKey();
+        if (!SHADER_PANEL_VIEWS.has(key)) return;
+        const config = PAGE_SHADER_CONFIG[key] || (PAGE_SHADER_CONFIG[key] = JSON.parse(JSON.stringify(DEFAULT_SHADER_CONFIG[key] || DEFAULT_SHADER_CONFIG.atelier)));
+        config.speed = Number(event.target.value);
+        if (window.shaderController) {
+          window.shaderController.update({ palette: config.palette, speed: config.speed });
+        }
+      });
+
+      shaderColorInputs.forEach((input) => {
+        input.addEventListener('input', (event) => {
+          const key = getCurrentShaderPageKey();
+          if (!SHADER_PANEL_VIEWS.has(key)) return;
+          const idx = Number(event.target.dataset.colorIndex);
+          const config = PAGE_SHADER_CONFIG[key] || (PAGE_SHADER_CONFIG[key] = JSON.parse(JSON.stringify(DEFAULT_SHADER_CONFIG[key] || DEFAULT_SHADER_CONFIG.atelier)));
+          config.palette[idx] = event.target.value;
+          if (window.shaderController) {
+            window.shaderController.update({ palette: config.palette, speed: config.speed });
+          }
+        });
+      });
+
+      const saveShaderConfigBtn = document.getElementById('saveShaderConfigBtn');
+      saveShaderConfigBtn && saveShaderConfigBtn.addEventListener('click', saveCurrentShaderConfig);
+
+      window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)});
+    }
+
+    function setView(v){
+      state.view = v;
+      // hide all
+      Object.values(views).forEach(el=>el.style.display='none');
+      if(v==='home') views.home.style.display='block';
+      else if(v==='gallery') views.gallery.style.display='block';
+      else if(v==='about') views.about.style.display='block';
+      else if(v==='atelier') views.atelier.style.display='block';
+      else if(v==='music') views.music.style.display='block';
+      else if(v==='exhibitions') views.exhibitions.style.display='block';
+      else if(v==='custom') views.custom.style.display='block';
+      else if(v==='vip') views.vip.style.display='block';
+      else if(v==='details') views.details.style.display='block';
+      // ensure gallery visible by default
+      if(v==='home'||v==='gallery') views.gallery.style.display='block';
+      // Shader visibility and panel state are page-specific
+      const targetKey = (v === 'home') ? 'gallery' : v;
+    if (PAGE_SHADERS[targetKey] && window.shaderController) {
+      window.shaderController.update({ 
+        palette: PAGE_SHADERS[targetKey].colors, 
+        speed: PAGE_SHADERS[targetKey].speed 
+      });
+    }
+      // Only auto-scroll to top when explicitly showing the home view
+      if(v==='home') window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    function createCustomCard(card, page){
+      const item = document.createElement('div');
+      item.className = 'custom-card';
+      item.dataset.cardId = String(card.id);
+      item.dataset.page = page;
+      item.style.left = (card.x || 12) + 'px';
+      item.style.top = (card.y || 12) + 'px';
+      item.style.width = (card.width || 260) + 'px';
+      item.style.height = (card.height || 220) + 'px';
+      item.innerHTML = `
+        <div class="custom-card-controls">
+          <div class="custom-card-tools">
+            <span>Case</span>
+            <button type="button" class="custom-card-delete">Supprimer</button>
+          </div>
+          <div class="custom-card-size-controls">
+            <label>Largeur
+              <input class="card-width" type="range" min="180" max="520" value="${card.width || 260}" />
+            </label>
+            <label>Hauteur
+              <input class="card-height" type="range" min="120" max="420" value="${card.height || 220}" />
+            </label>
+            <label>X
+              <input class="card-x" type="range" min="0" max="760" value="${card.x || 12}" />
+            </label>
+            <label>Y
+              <input class="card-y" type="range" min="0" max="420" value="${card.y || 12}" />
+            </label>
+          </div>
+          <button type="button" class="custom-card-image">Ajouter une image</button>
+        </div>
+        <div class="custom-card-body" contenteditable="false" spellcheck="false">${(card.text || 'Nouveau contenu').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
+        <img class="custom-card-image-preview" alt="image" src="${card.image || ''}" style="${card.image ? 'display:block' : 'display:none'}" />
+      `;
+      const widthInput = item.querySelector('.card-width');
+      const heightInput = item.querySelector('.card-height');
+      const xInput = item.querySelector('.card-x');
+      const yInput = item.querySelector('.card-y');
+      const textBody = item.querySelector('.custom-card-body');
+      const imageButton = item.querySelector('.custom-card-image');
+      const imagePreview = item.querySelector('.custom-card-image-preview');
+      const deleteButton = item.querySelector('.custom-card-delete');
+      const pageBuilder = item.closest('.page-customizer');
+      item.classList.add('resizable-block');
+      const updateCard = () => {
+        item.style.width = widthInput.value + 'px';
+        item.style.height = heightInput.value + 'px';
+        item.style.left = xInput.value + 'px';
+        item.style.top = yInput.value + 'px';
+        saveSiteState();
+      };
+      widthInput.addEventListener('input', updateCard);
+      heightInput.addEventListener('input', updateCard);
+      xInput.addEventListener('input', updateCard);
+      yInput.addEventListener('input', updateCard);
+      textBody.addEventListener('input', () => {
+        saveSiteState();
+      });
+      textBody.addEventListener('click', () => {
+        if (pageBuilder && pageBuilder.classList.contains('controls-hidden')) return;
+        textBody.setAttribute('contenteditable', 'true');
+      });
+      deleteButton.addEventListener('click', () => {
+        const pageCards = (state.pageCustomCards[page] || []).filter((entry) => entry.id !== Number(item.dataset.cardId));
+        state.pageCustomCards[page] = pageCards;
+        renderPageCustomCards(page);
+        saveSiteState();
+      });
+      imageButton.addEventListener('click', () => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.onchange = (event) => {
+          const file = event.target.files && event.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = (loadEvent) => {
+            const result = loadEvent.target.result;
+            imagePreview.src = result;
+            imagePreview.style.display = 'block';
+            saveSiteState();
+          };
+          reader.readAsDataURL(file);
+        };
+        input.click();
+      });
+      return item;
+    }
+
+    function renderPageCustomCards(page){
+      const builder = document.querySelector('.page-customizer[data-page="' + page + '"]');
+      if (!builder) return;
+      const canvas = builder.querySelector('.custom-cards-canvas');
+      if (!canvas) return;
+      canvas.innerHTML = '';
+      const cards = state.pageCustomCards[page] || [];
+      cards.forEach((card) => {
+        canvas.appendChild(createCustomCard(card, page));
+      });
+      const toggle = builder.querySelector('.custom-mode-toggle');
+      if (toggle) {
+        toggle.textContent = builder.classList.contains('controls-hidden') ? 'Afficher les contrôles' : 'Masquer les contrôles';
+      }
+    }
+
+    function renderAllPageCustomCards(){
+      document.querySelectorAll('.page-customizer').forEach((builder) => {
+        const page = builder.dataset.page;
+        renderPageCustomCards(page);
+      });
+    }
+
+    function renderGrid(){
+      const q = searchInput.value.toLowerCase();
+      const series = seriesFilter.value; const size = sizeFilter.value;
+      grid.innerHTML='';
+      const filtered = state.artworks.filter(a => a.title.toLowerCase().includes(q) && (!series || series === 'Toutes les séries' || series === 'Toutes' || a.series === series) && (!size || size === 'Toutes les tailles' || size === 'Toutes' || a.dimensions === size));
+      filtered.forEach((art,i)=>{
+        const card = document.createElement('div'); 
+card.className = `card ${art.stock === 0 ? 'sold' : ''}`;
+        const img = document.createElement('img'); img.src = art.mainImage; img.alt=art.title; card.appendChild(img);
+        const body = document.createElement('div'); body.className='card-body';
+        const h = document.createElement('h3'); h.textContent=art.title; h.style.fontFamily='Fraunces, serif'; body.appendChild(h);
+        const meta = document.createElement('div'); meta.className='muted'; meta.textContent = art.dimensions + ' — ' + art.series; body.appendChild(meta);
+        const price = document.createElement('div'); 
+price.style.marginTop = '10px'; 
+price.innerHTML = art.stock === 0 ? 'Indisponible' : priceHtml(art.price); 
+price.style.fontWeight = '700'; 
+if (art.stock === 0) price.style.opacity = '0.6';
+body.appendChild(price);
+        card.appendChild(body);
+        card.addEventListener('click', () => {
+  if (art.stock > 0) openDetails(art);
+});
+        grid.appendChild(card);
+      });
+    }
+
+    function updateArtworkFilters(){
+  const series = ['Toutes les séries', ...new Set(state.artworks.map(a=>a.series))];
+  const sizes = ['Toutes les tailles', ...new Set(state.artworks.map(a=>a.dimensions))];
+  const currentSeries = seriesFilter.value || 'Toutes les séries';
+  const currentSize = sizeFilter.value || 'Toutes les tailles';
+
+  seriesFilter.innerHTML = '';
+  series.forEach(s => {
+    const o = document.createElement('option');
+    o.value = (s === 'Toutes les séries') ? '' : s;
+    o.textContent = s;
+    if (s === currentSeries || (currentSeries === '' && s === 'Toutes les séries')) o.selected = true;
+    seriesFilter.appendChild(o);
+  });
+
+  sizeFilter.innerHTML = '';
+  sizes.forEach(s => {
+    const o = document.createElement('option');
+    o.value = (s === 'Toutes les tailles') ? '' : s;
+    o.textContent = s;
+    if (s === currentSize || (currentSize === '' && s === 'Toutes les tailles')) o.selected = true;
+    sizeFilter.appendChild(o);
+  });
+
+  renderGrid();
+}
+
+/* ================= ESPACE VIP ================= */
+let vipCode = null;
+try { vipCode = localStorage.getItem('vipCode') || null; } catch (e) {}
+ 
+function isVip() { return !!vipCode; }
+function vipPrice(p) { return Math.round(p * 90) / 100; }   // -10 %
+function fmtEuro(n) { return n.toLocaleString('fr-FR') + ' €'; }
+ 
+// Affichage du prix : normal, ou barré + prix VIP
+function priceHtml(p, full) {
+  if (!isVip()) return p + ' €';
+  return '<s style="opacity:.55;font-weight:400;font-size:.7em;margin-right:8px">' + fmtEuro(p) + '</s>' +
+         '<span>' + fmtEuro(vipPrice(p)) + '</span>' +
+         (full
+           ? '<span style="display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-top:2px">✦ Tarif spécial VIP (−10 %)</span>'
+           : '<span style="margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:999px;border:1px solid currentColor;opacity:.85">VIP</span>');
+}
+ 
+function vipSetMsg(text, isError) {
+  const el = document.getElementById('vipStatus');
+  if (!el) return;
+  el.textContent = text;
+  el.style.setProperty('color', isError ? '#b3261e' : '#1a1a1a', 'important');
+}
+ 
+function vipRefreshUI() {
+  const input = document.getElementById('vipCodeInput');
+  const btn = document.getElementById('vipLoginBtn');
+  if (input && btn) {
+    if (isVip()) {
+      input.style.display = 'none';
+      btn.textContent = 'Se déconnecter';
+      vipSetMsg('✦ Accès collectionneur activé : 10 % de remise sur toute la galerie.', false);
+    } else {
+      input.style.display = '';
+      btn.textContent = "S'authentifier";
+    }
+  }
+  renderGrid();
+  updateCartUI();
+}
+ 
+async function vipLogin() {
+  const input = document.getElementById('vipCodeInput');
+  const btn = document.getElementById('vipLoginBtn');
+  const code = (input.value || '').trim().toUpperCase();
+  if (!code) { vipSetMsg('Entrez votre code invitation.', true); return; }
+  btn.disabled = true; btn.textContent = 'Vérification…';
+  try {
+    const r = await fetch('/api/vip-verify', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code })
+    });
+    const d = await r.json();
+    if (d.valid) {
+      vipCode = code;
+      try { localStorage.setItem('vipCode', code); } catch (e) {}
+      input.value = '';
+      vipRefreshUI();
+    } else {
+      vipSetMsg('Code invalide. Vérifiez votre e-mail de confirmation.', true);
+    }
+  } catch (e) {
+    vipSetMsg('Connexion impossible, réessayez dans un instant.', true);
+  }
+  btn.disabled = false;
+  if (!isVip()) btn.textContent = "S'authentifier";
+}
+ 
+function vipLogout() {
+  vipCode = null;
+  try { localStorage.removeItem('vipCode'); } catch (e) {}
+  vipSetMsg('', false);
+  vipRefreshUI();
+}
+ 
+// Au chargement : revérifie le code mémorisé, branche les boutons, gère le retour de paiement
+window.addEventListener('load', async () => {
+  const input = document.getElementById('vipCodeInput');
+  const btn = document.getElementById('vipLoginBtn');
+  if (btn) btn.addEventListener('click', () => (isVip() ? vipLogout() : vipLogin()));
+  if (input) input.addEventListener('keydown', (e) => { if (e.key === 'Enter') vipLogin(); });
+  vipRefreshUI();
+ 
+  if (isVip()) {
+    try {
+      const r = await fetch('/api/vip-verify', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: vipCode })
+      });
+      const d = await r.json();
+      if (r.ok && d.valid === false) vipLogout();
+    } catch (e) {}
+  }
+ 
+  if (new URLSearchParams(location.search).get('payment') === 'success') {
+    alert('Merci pour votre commande ! Un e-mail de confirmation (avec votre code collectionneur) vient de vous être envoyé.');
+    history.replaceState(null, '', location.pathname);
+  }
+});
+async function payerOeuvre(title, price) {
+  try {
+    const { error } = await stripe.redirectToCheckout({
+      lineItems: [{
+        priceData: {
+          currency: 'eur',
+          productData: {
+            name: title,
+            description: "Techniques mixtes — Olivier Salvatge",
+          },
+          unitAmount: price * 100,
+        },
+        quantity: 1,
+      }],
+      mode: 'payment',
+      successUrl: window.location.origin + '?status=success',
+      cancelUrl: window.location.origin + '?status=cancel',
+    });
+    if (error) console.error("Erreur Stripe :", error);
+  } catch (err) {
+    console.error("Erreur :", err);
+  }
+}
+    function openDetails(art){
+      window.lastScrollPosition = window.scrollY;
+  state.selected = art;
+  detailsContent.innerHTML = '';
+  
+  // Calcul dynamique de la taille selon les dimensions (ex: 100cm = 42% de la largeur)
+  let artworkWidthPercent = 42; 
+  if (art.dimensions) {
+    const parsedWidth = parseInt(art.dimensions);
+    if (!isNaN(parsedWidth)) {
+      artworkWidthPercent = Math.min(Math.max((parsedWidth / 100) * 42, 20), 65);
+    }
+  }
+
+  // Vignettes des images
+  let thumbsHtml = (art.images || [art.mainImage]).map((img) => 
+    `<img src="${img}" onclick="showMainImg('${img}')" style="width:60px;height:60px;object-fit:cover;cursor:pointer;border-radius:6px;border:1px solid rgba(255,255,255,0.4);">`
+  ).join('');
+
+  
+
+  const html = `
+  <button onclick="setView('gallery'); if(window.lastScrollPosition !== undefined) setTimeout(() => window.scrollTo(0, window.lastScrollPosition), 10);" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:8px 16px;border-radius:20px;backdrop-filter:blur(10px);cursor:pointer;margin-bottom:16px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;">
+  ← Retour à la galerie
+</button>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+      <!-- COLONNE GAUCHE : VISUEL -->
+      <div>
+        <div id="mediaDisplayArea" style="position:relative;width:100%;height:450px;background:transparent;">
+            <!-- Image principale (vue classique) -->
+            <img id="mainDetailImg" src="${art.images && art.images[0] ? art.images[0] : art.mainImage}" style="width:100%;height:100%;object-fit:contain;" />
+
+            <!-- Vue Salon (image unique sans cadre) -->
+            <img id="roomMockup" src="images/cartographie-salon.jpg" style="display:none;width:100%;height:100%;object-fit:cover;" />
+          </div>
+        
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          ${thumbsHtml}
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE : INFORMATIONS -->
+      <div>
+        <div class="label">${art.series} — Série Limitée</div>
+        <h2 style="font-family:Fraunces, serif;font-size:36px;margin:10px 0;">${art.title}</h2>
+        <p style="font-weight:700;font-size:28px;margin:10px 0;">${priceHtml(art.price, true)}</p>
+        <p style="color:var(--ink-soft);font-style:italic;">${art.description}</p>
+        <div style="margin-top:18px;border-top:1px solid var(--line);padding-top:12px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span>Dimensions</span><strong>${art.dimensions}</strong></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span>Année</span><strong>${art.year}</strong></div>
+          <div style="display:flex;justify-content:space-between;"><span>Disponibilité</span><strong>${art.stock>0?'Disponible':'Épuisé'}</strong></div>
+        </div>
+        <button id="addToCartBtn" style="margin-top:18px;padding:14px 24px;border-radius:999px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.35);color:#fff;font-weight:600;font-size:15px;backdrop-filter:blur(12px);cursor:pointer;width:100%;box-shadow:0 4px 20px rgba(0,0,0,0.15);transition:all 0.2s ease;">Acquérir cette œuvre</button>
+      </div>
+    </div>
+  `;
+  
+  detailsContent.innerHTML = html;
+  setView('details');
+  if (window.matchMedia('(max-width:768px)').matches) window.scrollTo(0, 0);
+document.getElementById('addToCartBtn').addEventListener('click', () => addToCart(art));
+}
+
+function showMainImg(src) {
+  const mainImg = document.getElementById('mainDetailImg');
+  const roomMockup = document.getElementById('roomMockup');
+
+  roomMockup.style.display = 'none';
+  mainImg.style.display = 'block';
+  mainImg.src = src;
+
+  // Si c'est l'image principale (contient nobg ou cartographie)
+  if (src.includes('nobg') || src.includes('cartographie.jpg') || src.includes('mordore.jpg')) {
+    mainImg.style.objectFit = 'contain';
+    mainImg.style.objectPosition = 'top center';
+  } else {
+    // Si c'est une image de zoom / détail
+    mainImg.style.objectFit = 'cover';
+    mainImg.style.objectPosition = 'center';
+  }
+}
+
+function showRoomView() {
+  document.getElementById('mainDetailImg').style.display = 'none';
+  document.getElementById('roomMockup').style.display = 'block';
+}
+
+    function addToCart(art){
+      if(art.stock<=0) return alert('Indisponible');
+      if(!state.cart.find(i=>i.id===art.id)) state.cart.push({...art,qty:1});
+      updateCartUI();
+      openCart();
+    }
+
+    function updateCartUI() {
+  cartCountEl.textContent = state.cart.length;
+  cartItemsEl.innerHTML = '';
+ 
+  if (state.cart.length === 0) {
+    cartItemsEl.innerHTML = `
+      <div style="text-align: center; padding: 40px 20px; color: #86868b;">
+        <p style="font-size: 16px;">Votre panier est vide</p>
+      </div>
+    `;
+    return;
+  }
+ 
+  let total = 0, originalTotal = 0;
+  state.cart.forEach((item) => {
+    const qty = item.qty || 1;
+    const unit = isVip() ? vipPrice(item.price) : item.price;
+    total += unit * qty;
+    originalTotal += item.price * qty;
+ 
+    const priceLine = isVip()
+      ? `<s>${fmtEuro(item.price)}</s> <strong style="color:#1d1d1f">${fmtEuro(unit)}</strong>
+         <div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#a6702f;font-weight:600;">Tarif spécial VIP</div>`
+      : fmtEuro(item.price);
+ 
+    const el = document.createElement('div');
+    el.className = 'cart-item';
+    el.innerHTML = `
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <img src="${item.mainImage || (item.images && item.images[0])}" alt="${item.title}">
+        <div>
+          <div style="font-weight: 600; font-size: 15px;">${item.title}</div>
+          <div style="color: #86868b; font-size: 13px;">${priceLine}</div>
+        </div>
+      </div>
+      <button class="btn-remove" title="Supprimer">✕</button>
+    `;
+ 
+    el.querySelector('.btn-remove').addEventListener('click', () => {
+      state.cart = state.cart.filter(c => c.id !== item.id);
+      updateCartUI();
+    });
+ 
+    cartItemsEl.appendChild(el);
+  });
+ 
+  const freeShip = isVip() && originalTotal >= 500;
+  const footerEl = document.createElement('div');
+  footerEl.className = 'cart-footer';
+  footerEl.innerHTML = `
+    <div class="cart-total-line">
+      <span>Total</span>
+      <span>${fmtEuro(total)}</span>
+    </div>
+    ${isVip() ? `<div style="font-size:13px;color:#86868b;">✦ Remise collectionneur −10 % incluse${freeShip ? ' · livraison assurée offerte' : ''}</div>` : ''}
+    <button class="btn-checkout-stripe" onclick="payerPanierStripe()">
+      Finaliser la commande
+    </button>
+  `;
+  cartItemsEl.appendChild(footerEl);
+}
+ 
+async function payerPanierStripe() {
+  if (!state.cart || state.cart.length === 0) {
+    alert("Votre panier est vide !");
+    return;
+  }
+ 
+  // On n'envoie que les identifiants : les prix sont recalculés côté serveur
+  const items = state.cart.map(item => ({ id: item.id }));
+ 
+  try {
+    const response = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, vipCode: isVip() ? vipCode : null }),
+    });
+    const data = await response.json();
+ 
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      if (data.vipInvalid) vipLogout();
+      alert("Erreur de paiement : " + (data.error || "Impossible d'initialiser la session"));
+    }
+  } catch (err) {
+    console.error("Erreur serveur :", err);
+    alert("Impossible de contacter le serveur de paiement.");
+  }
+}
+// Tracks rendering
+function renderTracks(){
+  const tracksEl = document.getElementById('tracks');
+  if (!tracksEl) return;
+  tracksEl.innerHTML = '';
+  TRACKS.forEach(t => {
+    const div = document.createElement('div');
+    div.style.background = 'var(--paper-soft)';
+    div.style.padding = '12px';
+    div.style.marginBottom = '8px';
+    const play = document.createElement('button');
+    play.textContent = '►';
+    play.style.marginRight = '12px';
+    const title = document.createElement('span');
+    title.textContent = t.title + ' - ' + t.artist;
+    title.style.fontWeight = '600';
+    const audio = new Audio(t.url);
+    play.addEventListener('click', async () => {
+      audio.play();
+    });
+    div.appendChild(play);
+    div.appendChild(title);
+    tracksEl.appendChild(div);
+  });
+}
+function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); }
+function closeCart(){ cartDrawer.classList.remove('open'); cartOverlay.classList.remove('open'); }
+    /* ShaderGradient: minimal WebGL shader background with configurable palette & speed.
+       - Edit `PALETTE` below (hex strings) to change colors.
+       - Edit `SPEED` to adjust animation speed (smaller = slower).
+    */
+    function setupShaderGradient(opts){
+      const canvas = document.getElementById('shader-global') || document.getElementById('shader-canvas');
+      if(!canvas) return null;
+      const gl = canvas.getContext('webgl');
+      if(!gl) return console.warn('WebGL not supported for shader background');
+
+      // Config (editable via returned controller)
+      let PALETTE = (opts && opts.palette) || ['#432deb','#5c99db','#c723b2','#b653ca'];
+      let SPEED = (opts && typeof opts.speed === 'number') ? opts.speed : 0.8;
+
+      // Utilities
+      function hexToRgbNorm(h){
+        const c = h.replace('#','');
+        const r = parseInt(c.substring(0,2),16)/255;
+        const g = parseInt(c.substring(2,4),16)/255;
+        const b = parseInt(c.substring(4,6),16)/255;
+        return [r,g,b];
+      }
+
+      // Vertex shader (simple passthrough)
+      const vs = `attribute vec2 a_position;void main(){gl_Position=vec4(a_position,0.,1.);}`;
+
+      // Fragment shader: layered, slow-moving smooth gradients blended between palette colors
+      const fs = `precision mediump float;
+      uniform vec2 u_resolution;
+      uniform float u_time;
+      uniform vec3 u_palette[4];
+      uniform float u_speed;
+
+      mat2 rot(float a){float s=sin(a), c=cos(a);return mat2(c,-s,s,c);}
+
+      void main(){
+        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+        vec2 p = uv - 0.5;
+        p.x *= u_resolution.x / u_resolution.y;
+        float t = u_time * u_speed;
+
+        float d1 = length(p + 0.15 * vec2(sin(t*0.2), cos(t*0.2)) );
+        float d2 = length(p*rot(t*0.05) + 0.25 * vec2(sin(t*0.12 + 1.0), cos(t*0.12 + 1.0)) );
+        float d3 = length(p*rot(-t*0.03) + 0.35 * vec2(sin(-t*0.08 + 2.0), cos(-t*0.08 + 2.0)) );
+
+        float m1 = smoothstep(0.0,0.9, sin(d1*6.0 - t*0.2) * 0.5 + 0.5);
+        float m2 = smoothstep(0.0,0.9, sin(d2*5.0 - t*0.12) * 0.5 + 0.5);
+        float m3 = smoothstep(0.0,0.9, sin(d3*4.0 - t*0.08) * 0.5 + 0.5);
+
+        vec3 col = mix(u_palette[0], u_palette[1], m1);
+        col = mix(col, u_palette[2], m2*0.7);
+        col = mix(col, u_palette[3], m3*0.5);
+
+        float vign = smoothstep(0.8,0.3,length(p));
+        col *= mix(1.0,0.85,vign*0.25);
+
+        gl_FragColor = vec4(col,1.0);
+      }`;
+
+      function compileShader(type, source){
+        const s = gl.createShader(type); gl.shaderSource(s, source); gl.compileShader(s);
+        if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { console.error(gl.getShaderInfoLog(s)); gl.deleteShader(s); return null }
+        return s;
+      }
+
+      const vert = compileShader(gl.VERTEX_SHADER, vs);
+      const frag = compileShader(gl.FRAGMENT_SHADER, fs);
+      const prog = gl.createProgram(); gl.attachShader(prog, vert); gl.attachShader(prog, frag); gl.linkProgram(prog);
+      if(!gl.getProgramParameter(prog, gl.LINK_STATUS)) { console.error(gl.getProgramInfoLog(prog)); return null }
+      gl.useProgram(prog);
+
+      // Fullscreen tri
+      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+      const pos = gl.getAttribLocation(prog,'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+
+      const u_time = gl.getUniformLocation(prog,'u_time');
+      const u_resolution = gl.getUniformLocation(prog,'u_resolution');
+      const u_palette = gl.getUniformLocation(prog,'u_palette');
+      const u_speed = gl.getUniformLocation(prog,'u_speed');
+
+      // palette storage (Float32Array) updated via controller
+      let palFloats = new Float32Array(12);
+      function refreshPalette(){
+        for(let i=0;i<4;i++){ const rgb = hexToRgbNorm(PALETTE[i] || '#000000'); palFloats[i*3+0]=rgb[0]; palFloats[i*3+1]=rgb[1]; palFloats[i*3+2]=rgb[2]; }
+      }
+      refreshPalette();
+
+      // handle resize
+      function resize(){
+        const dpr = window.devicePixelRatio || 1;
+        const w = canvas.clientWidth || canvas.offsetWidth;
+        const h = canvas.clientHeight || canvas.offsetHeight;
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        gl.viewport(0,0,canvas.width,canvas.height);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // Observe gallery size/content changes to keep canvas resized (debounced)
+      try{
+        const galleryEl = document.getElementById('galerie');
+        let resizeTimer = null;
+        const debounced = ()=>{ if(resizeTimer) clearTimeout(resizeTimer); resizeTimer = setTimeout(()=>{ resize(); }, 120); };
+        const mo = new MutationObserver(debounced);
+        if(galleryEl) mo.observe(galleryEl, { childList:true, subtree:true, attributes:true, characterData:true });
+        // also watch images loading inside gallery
+        galleryEl && galleryEl.querySelectorAll('img').forEach(img=>{ img.addEventListener('load', debounced); });
+      }catch(e){ /* ignore */ }
+
+      let start = performance.now();
+      function frame(now){
+        const time = (now - start) / 1000;
+        gl.uniform1f(u_time, time);
+        gl.uniform2f(u_resolution, canvas.width, canvas.height);
+        gl.uniform3fv(u_palette, palFloats);
+        gl.uniform1f(u_speed, SPEED);
+        gl.drawArrays(gl.TRIANGLES,0,3);
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      // controller API to update palette & speed
+      return {
+        update(opts){
+          if(!opts) return;
+          if(opts.palette && Array.isArray(opts.palette)){
+            PALETTE = opts.palette.slice(0,4);
+            refreshPalette();
+          }
+          if(typeof opts.speed === 'number') SPEED = opts.speed;
+        }
+      };
+    }
+
+    // Kick off
+    init();
+
+    // Small helpers to adjust or reset nav button transparency at runtime.
+    // Usage: `window.setNavBtnTransparency(0.06)` or `window.resetNavBtnTransparency()`
+    window.setNavBtnTransparency = function(alpha){
+      if(typeof alpha === 'number' || typeof alpha === 'string'){
+        document.documentElement.style.setProperty('--nav-btn-bg-alpha', String(alpha));
+      }
+    };
+    window.resetNavBtnTransparency = function(){
+      // restore the previous look if needed (values prior to this change)
+      document.documentElement.style.setProperty('--nav-btn-bg-alpha','0.12');
+      document.documentElement.style.setProperty('--nav-btn-hover-alpha','0.16');
+      document.documentElement.style.setProperty('--nav-btn-border-alpha','0.4');
+      document.documentElement.style.setProperty('--nav-btn-highlight-alpha','0.6');
+    };
+    // Gestion de la pause croisée MP3 / Bandcamp
+  const localAudios = document.querySelectorAll('audio');
+  const bandcampIframe = document.querySelector('iframe');
+
+  // 1. Quand un MP3 est lancé : stoppe les autres MP3 + réinitialise Bandcamp
+  localAudios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      localAudios.forEach(otherAudio => {
+        if (otherAudio !== audio) otherAudio.pause();
+      });
+
+      if (bandcampIframe) {
+        const currentSrc = bandcampIframe.src;
+        bandcampIframe.src = currentSrc;
+      }
+    });
+  });
+
+  // 2. Dès qu'on clique à l'intérieur de l'iframe Bandcamp : stoppe immédiatement les MP3
+  window.addEventListener('blur', () => {
+    if (document.activeElement === bandcampIframe) {
+      localAudios.forEach(audio => audio.pause());
+    }
+  });
+    // Start with the new, more transparent defaults already defined in CSS variables.
+// Fonction pour ouvrir la vue en situation
+function openRoomModal(imageSrc, widthCm, heightCm) {
+  const modal = document.getElementById('roomModal');
+  const artwork = document.getElementById('artworkInRoom');
+  const dimText = document.getElementById('roomDimensionsText');
+
+  const scaleFactor = 1.6; 
+  const widthPx = widthCm * scaleFactor;
+  const heightPx = heightCm * scaleFactor;
+
+  artwork.style.backgroundImage = `url('${imageSrc}')`;
+  artwork.style.width = `${widthPx}px`;
+  artwork.style.height = `${heightPx}px`;
+
+  dimText.textContent = `Dimensions de l'œuvre : ${widthCm} x ${heightCm} cm`;
+  modal.style.display = 'flex';
+}
+
+function closeRoomModal() {
+  document.getElementById('roomModal').style.display = 'none';
+}
+function toggleExpoGallery(card) {
+  const wrapper = card.querySelector('.expo-gallery-wrapper');
+  const chevron = card.querySelector('.expo-chevron');
+  const isOpen = wrapper.style.gridTemplateRows === '1fr';
+
+  if (!isOpen) {
+    wrapper.style.gridTemplateRows = '1fr';
+    wrapper.style.opacity = '1';
+    wrapper.style.marginTop = '16px';
+    chevron.style.transform = 'rotate(180deg)';
+  } else {
+    wrapper.style.gridTemplateRows = '0fr';
+    wrapper.style.opacity = '0';
+    wrapper.style.marginTop = '0px';
+    chevron.style.transform = 'rotate(0deg)';
+  }
+}
+</script>
+<!-- Modale Mise en situation -->
+<div id="roomModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px); z-index:9999; justify-content:center; align-items:center;">
+  <div style="position:relative; width:90%; max-width:800px; background:#e8e4df; border-radius:24px; padding:30px; box-shadow:0 20px 50px rgba(0,0,0,0.3); display:flex; flex-direction:column; align-items:center;">
+    
+    <!-- Bouton Fermer -->
+    <button onclick="closeRoomModal()" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#333;">✕</button>
+    <h3 style="margin-top:0; font-family:Fraunces,serif; color:#2d3748;">Aperçu en situation (Échelle réelle)</h3>
+
+    <!-- Mur virtuel -->
+    <div style="position:relative; width:100%; height:420px; background:linear-gradient(to bottom, #ded7cd 0%, #d0c6b8 100%); border-radius:16px; overflow:hidden; display:flex; justify-content:center; align-items:center; box-shadow:inset 0 0 40px rgba(0,0,0,0.1);">
+      
+      <!-- Tableau à l'échelle -->
+      <div id="artworkInRoom" style="position:absolute; top:22%; background-size:cover; background-position:center; box-shadow:0 12px 25px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.2); transition: all 0.3s ease;"></div>
+
+      <!-- Canapé SVG de référence -->
+      <div style="position:absolute; bottom:10px; width:320px; opacity:0.85;">
+        <svg viewBox="0 0 200 80" fill="#4a403a" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="30" width="180" height="40" rx="8"/>
+          <rect x="0" y="25" width="20" height="45" rx="5"/>
+          <rect x="180" y="25" width="20" height="45" rx="5"/>
+          <rect x="15" y="10" width="170" height="25" rx="6"/>
+        </svg>
+      </div>
+
+      <!-- Sol / Plinthe -->
+      <div style="position:absolute; bottom:0; width:100%; height:12px; background:#a89b8c;"></div>
+    </div>
+
+    <!-- Légende -->
+    <p id="roomDimensionsText" style="margin-top:15px; margin-bottom:0; font-weight:bold; color:#2d3748;"></p>
+  </div>
+</div>
+<!-- FOOTER LÉGAL -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="#" onclick="openLegalModal('legal'); return false;">Mentions Légales</a>
+    <a href="#" onclick="openLegalModal('cgv'); return false;">Conditions Générales de Vente</a>
+    <a href="#" onclick="openLegalModal('privacy'); return false;">Politique de Confidentialité</a>
+    <a href="#" onclick="openLegalModal('cookies'); return false;">Gestion des Cookies</a>
+  </div>
+  <p class="copyright">&copy; 2026 Olivier Salvatge Studio. Tous droits réservés.</p>
+</footer>
+
+<!-- BANDEAU DE CONSENTEMENT COOKIES -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      Ce site utilise des cookies nécessaires au fonctionnement du panier et du paiement sécurisé Stripe, 
+      ainsi que des cookies d'analyse anonymes pour optimiser votre expérience. 
+      <a href="#" onclick="openLegalModal('cookies'); return false;">En savoir plus</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button onclick="acceptCookies()" class="btn-cookie btn-accept">Accepter tout</button>
+      <button onclick="refuseCookies()" class="btn-cookie btn-refuse">Refuser non-essentiels</button>
+    </div>
+  </div>
+</div>
+
+<!-- FENÊTRE MODALE TEXTES LÉGAUX -->
+<div id="legal-modal-overlay" class="legal-modal-overlay" onclick="closeLegalModal()">
+  <div class="legal-modal-content" onclick="event.stopPropagation()">
+    <button class="btn-close-legal" onclick="closeLegalModal()">&times;</button>
+    <div id="legal-text-container"></div>
+  </div>
+</div>
+
+<style>
+/* Style Glassmorphic Apple - Footer & Legal */
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 60px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  z-index: 9999;
+  display: none;
+}
+
+.cookie-content p {
+  font-size: 13px;
+  color: #1d1d1f;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.cookie-content a {
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-cookie {
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-accept {
+  background: #0071e3;
+  color: #fff;
+}
+
+.btn-accept:hover {
+  background: #0077ed;
+}
+
+.btn-refuse {
+  background: rgba(0, 0, 0, 0.06);
+  color: #1d1d1f;
+}
+
+.btn-refuse:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.legal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.legal-modal-content {
+  background: #ffffff;
+  color: #1d1d1f;
+  width: 90%;
+  max-width: 750px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 40px;
+  border-radius: 24px;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.legal-modal-content h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #1d1d1f;
+}
+
+.legal-modal-content h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: #1d1d1f;
+}
+
+.legal-modal-content p {
+  font-size: 14px;
+  color: #515154;
+  margin-bottom: 12px;
+}
+
+.btn-close-legal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d1d1f;
+}
+/* ================= MOBILE UNIQUEMENT ================= */
+@media (max-width: 768px) {
+
+  /* ---------- 0. Base ---------- */
+  html, body { overflow-x: hidden !important; }
+  main { padding-top: 76px !important; }
+  #atelier, #vip, #details, #about, #custom, #exhibitions { padding: 18px 12px !important; }
+  main section .hero-title-single { font-size: 1.5rem !important; padding: 16px 12px !important; }
+
+  /* ---------- 1. NAVBAR : défilement horizontal au doigt ---------- */
+  #navbar {
+    padding: 8px 10px !important; gap: 8px !important;
+    flex-wrap: nowrap !important; align-items: center !important;
+    overflow: visible !important; width: 100% !important;
+  }
+  #navbar .brand { flex: 0 0 auto !important; font-size: 16px !important; white-space: nowrap; }
+  #navbar .nav-links {
+    flex: 1 1 0 !important; min-width: 0 !important; width: auto !important;
+    flex-wrap: nowrap !important; justify-content: flex-start !important;
+    overflow-x: auto !important; overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y; scrollbar-width: none;
+    padding: 4px 6px 10px !important; margin: -4px 0 -10px !important; gap: 8px !important;
+  }
+  #navbar .nav-links::-webkit-scrollbar { display: none; }
+  #navbar .nav-links::after { content: ""; flex: 0 0 6px; }
+  #navbar .nav-links button {
+    flex: 0 0 auto !important; white-space: nowrap !important;
+    font-size: 12.5px !important; padding: 8px 13px !important;
+    box-shadow: 0 6px 10px rgba(0,0,0,.22),
+                inset 0 6px 10px rgba(255,255,255,var(--nav-btn-highlight-alpha)),
+                inset 0 -5px 10px rgba(0,0,0,.14);
+  }
+  #navbar .nav-links button:hover { transform: none; filter: none; }
+
+  /* ---------- 2. FICHE ŒUVRE (croquis 1) ----------
+     retour → grande image → 3 vignettes → Acquérir → infos */
+  #details #detailsContent { padding: 14px !important; }
+  #detailsContent > div[style*="grid-template-columns"] {
+    display: flex !important; flex-direction: column !important; gap: 10px !important;
+  }
+  #detailsContent > div[style*="grid-template-columns"] > div { display: contents !important; }
+
+  #detailsContent #mediaDisplayArea { order: 1; width: 100% !important; height: min(60vh, 420px) !important; }
+  #detailsContent #mediaDisplayArea + div {
+    order: 2; display: flex !important; flex-wrap: nowrap !important;
+    justify-content: flex-start !important; gap: 12px !important; margin: 4px 0 !important;
+  }
+  #detailsContent #mediaDisplayArea + div img { width: 72px !important; height: 72px !important; object-fit: cover !important; }
+  #details#details #detailsContent #mediaDisplayArea + div img { border-radius: 22px !important; }   /* vignettes arrondies */
+  #detailsContent #addToCartBtn { order: 3; width: 100% !important; margin: 4px 0 !important; padding: 15px 20px !important; }
+
+  /* infos : série, titre, prix, technique, puis lignes Dimensions / Année… */
+  #detailsContent > div > div:last-child > * { order: 4; margin: 0 !important; text-align: left; }
+  #detailsContent > div > div:last-child > div:last-of-type { margin-top: 6px !important; }
+  #detailsContent h2 { font-size: 26px !important; line-height: 1.15 !important; }
+  #detailsContent > div > div:last-child > p:first-of-type { font-size: 22px !important; }
+
+  /* ---------- 3. L'ATELIER (croquis 4) ---------- */
+  /* (#atelier#atelier = spécificité pour battre le style verre !important) */
+  #atelier#atelier > .atelier-shell {
+    display: flex !important; flex-direction: column !important; gap: 14px !important;
+    padding: 0 !important; margin-top: 16px !important; align-items: stretch !important;
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  }
+  /* 3a. bloc citation + texte scrollable */
+  #atelier .atelier-shell > .atelier-text-card {
+    height: min(52vh, 320px) !important; max-height: none !important; width: 100% !important;
+    padding: 16px 10px 12px 16px !important; gap: 0 !important;
+    display: flex !important; flex-direction: column !important; overflow: hidden !important;
+    border: 1px solid rgba(255,255,255,.3) !important; border-radius: 22px !important;
+  }
+  #atelier .atelier-text-card .atelier-quote {
+    display: block !important; width: 100% !important; max-width: 100% !important;
+    margin: 0 0 10px !important; padding: 0 !important; white-space: normal !important;
+    text-align: center !important; font-size: 1.02rem !important; flex: 0 0 auto !important;
+  }
+  #atelier .atelier-description {
+    display: block !important; gap: 0 !important; width: auto !important; padding: 0 8px 0 0 !important;
+    flex: 1 1 auto !important; min-height: 0 !important;
+    overflow-y: auto !important; -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain; touch-action: pan-y !important; font-size: .95rem !important;
+  }
+  /* 3b. 4 photos en 2×2 */
+  #atelier .atelier-shell > .atelier-gallery {
+    display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px !important;
+    height: auto !important; width: 100% !important; padding: 0 !important;
+  }
+  #atelier .atelier-gallery img[data-drop-image] {
+    width: 100% !important; height: auto !important; aspect-ratio: 4 / 3 !important;
+    pointer-events: none !important;   /* pas de sélecteur de fichier au tap */
+  }
+  /* 3c. citation musique / groupe / musiques inspirantes : 3 blocs empilés */
+  #atelier#atelier > div[style*="flex-direction:column"] {
+    padding: 0 !important; margin-top: 14px !important; gap: 14px !important;
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  }
+  #atelier > div[style*="flex-direction:column"] > p {
+    margin: 0 !important; padding: 16px 18px !important; font-size: 1rem !important; line-height: 1.45 !important;
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 22px;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  #atelier div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 14px !important; }
+  #atelier div[style*="grid-template-columns"] > div { height: auto !important; padding: 16px !important; }
+  #atelier div[style*="grid-template-columns"] h3 { white-space: normal !important; }
+  #atelier iframe { height: 400px !important; }
+
+  /* ---------- 4. COLLECTIONNEURS / VIP (croquis 2) ----------
+     connexion → « Avantages exclusifs » → 4 cartes en 2×2 */
+  #vip#vip > div[style*="grid-template-columns"] {
+    display: flex !important; flex-direction: column !important; gap: 16px !important;
+    margin-top: 16px !important; padding: 0 !important;
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  }
+  #vip > div > div:last-child  { order: 1; width: 100% !important; padding: 22px 16px !important; }
+  #vip > div > div:first-child { order: 2; padding: 0 !important; }
+  #vip > div > div:first-child > h3 { font-size: 1.25rem !important; margin: 0 0 12px !important; }
+  #vip > div > div:first-child > div {
+    display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px !important;
+  }
+  #vip > div > div:first-child > div > div {
+    padding: 14px 12px !important; font-size: .85rem !important; line-height: 1.35 !important;
+    border-radius: 18px !important; min-height: 96px;
+  }
+  #vip input { font-size: 16px !important; }
+
+  /* ---------- 5. À PROPOS (croquis 3) : effet « journal » ----------
+     image à gauche, texte autour puis pleine largeur dessous, x2 */
+  #about > div[style*="grid-template-columns"] {
+    display: block !important; padding: 18px 16px !important; margin-top: 16px !important;
+  }
+  #about > div[style*="grid-template-columns"] > div:first-child { display: none !important; }  /* les <img> desktop */
+  #about > div[style*="grid-template-columns"] > div:last-child { display: block !important; height: auto !important; padding: 0 !important; }
+  #aboutText > div { display: block !important; min-height: 0 !important; height: auto !important; font-size: .95rem !important; line-height: 1.5 !important; }
+  #aboutText > div > div:first-child::after { content: ""; display: block; clear: both; }
+  #aboutText h3::before {
+    content: ""; float: left; width: 42%; aspect-ratio: 1 / 1; margin: 2px 14px 8px 0;
+    border-radius: 18px; border: 1px solid rgba(255,255,255,.35);
+    background-position: center; background-size: cover; background-repeat: no-repeat;
+    box-shadow: 0 8px 24px rgba(0,0,0,.14);
+  }
+  #aboutText h3:nth-of-type(1)::before { background-image: url("images/portrait.jpg"); }
+  #aboutText h3:nth-of-type(2)::before { background-image: url("images/photo_about_2.jpg"); }
+  #aboutText h3:nth-of-type(2) { clear: both; }
+  #aboutText > div > div:last-child { clear: both; padding-top: 12px !important; }
+
+  /* ---------- 6. FOOTERS ---------- */
+  footer:not(.site-footer) { padding: 24px 16px !important; margin-top: 24px !important; }
+  footer:not(.site-footer) > .container {
+    flex-direction: column !important; align-items: center !important;
+    text-align: center !important; gap: 18px !important; padding: 0 !important;
+  }
+  footer:not(.site-footer) > .container > div:last-child { flex-direction: column !important; align-items: center !important; gap: 14px !important; }
+  footer:not(.site-footer) a { overflow-wrap: anywhere; }
+  footer:not(.site-footer) > div:last-child { padding: 0 !important; }
+  .site-footer { padding: 28px 16px calc(28px + env(safe-area-inset-bottom)) !important; margin-top: 32px !important; font-size: 12px !important; }
+  .footer-links { gap: 6px 16px !important; }
+  .footer-links a { padding: 4px 0; }
+
+  /* ---------- 7. BANDEAU COOKIES ---------- */
+  .cookie-banner {
+    left: 12px !important; right: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    width: auto !important; max-width: none !important; transform: none !important;
+    padding: 16px !important; border-radius: 18px !important; max-height: 70vh; overflow-y: auto;
+  }
+  .cookie-content p { font-size: 12.5px !important; margin-bottom: 12px !important; }
+  .cookie-buttons { flex-direction: column-reverse !important; gap: 8px !important; }
+  .btn-cookie { width: 100% !important; padding: 12px 16px !important; font-size: 14px !important; }
+
+  /* ---------- 8. MODALES LÉGALES ---------- */
+  .legal-modal-overlay { top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; padding: 12px !important; box-sizing: border-box !important; }
+  .legal-modal-content {
+    width: 100% !important; max-width: none !important; max-height: 100% !important;
+    padding: 56px 18px 20px !important; border-radius: 20px !important;
+    overflow: hidden !important; display: flex !important; flex-direction: column !important;
+  }
+  #legal-text-container { flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+  .legal-modal-content h2 { font-size: 19px !important; }
+  .btn-close-legal { top: 10px !important; right: 10px !important; width: 40px !important; height: 40px !important; z-index: 2; }
+
+  /* ---------- 9. Panier + pages hors croquis ---------- */
+  #cartDrawer { width: min(92vw, 380px) !important; }
+  #custom form { padding: 20px 16px !important; }
+  #custom form > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  #custom input, #custom textarea { font-size: 16px !important; }
+  #exhibitions .expo-gallery-wrapper div[style*="grid-template-columns"] { grid-template-columns: repeat(2, 1fr) !important; }
+  /* ---------- 10. Lecteur Bandcamp ---------- */
+  #atelier div:has(> iframe) {
+    padding: 0 !important; background: transparent !important; border: 0 !important;
+    box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  }
+  #atelier iframe { width: 100% !important; height: 440px !important; border-radius: 14px !important; }
+
+  /* ---------- 11. Panier : au-dessus de la navbar, style Apple ---------- */
+  #cartOverlay { z-index: 290 !important; }
+  #cartDrawer {
+    z-index: 300 !important; width: min(92vw, 380px) !important;
+    background: rgba(245,245,247,.78) !important;
+    backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 24px 0 0 24px;
+  }
+  #cartDrawer > div:first-child { padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 14px !important; }
+  #cartDrawer h3 { margin: 0; font-size: 1.25rem; color: #1d1d1f; }
+  #closeCart {
+    padding: 8px 18px; border: 0; border-radius: 999px;
+    background: rgba(0,0,0,.07); color: #1d1d1f;
+    font: 600 14px Inter, sans-serif; cursor: pointer;
+  }
+  #closeCart:active { background: rgba(0,0,0,.14); }
+
+  /* ---------- 12. Cartes galerie compactes (mobile uniquement) ---------- */
+  .gallery-grid .card {
+    display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+    height: 320px !important; padding: 10px !important; box-sizing: border-box !important;
+  }
+  .gallery-grid .card img {
+    width: 100% !important; height: 180px !important; object-fit: contain !important; margin-bottom: 8px !important;
+  }
+  .gallery-grid .card h3 { min-height: 2.6em !important; margin: 0 0 4px 0 !important; }
+}
+</style>
+
+<script>
+const LEGAL_TEXTS = {
+  legal: `
+    <h2>Mentions Légales</h2>
+    <h3>1. Éditeur du site</h3>
+    <p>Le présent site est édité par <strong>Olivier Salvatge Studio</strong>.<br>
+    Statut : Artiste-Auteur / Entreprise Individuelle<br>
+    Siège social : Clermont-Ferrand, France<br>
+    Adresse e-mail : contact@oliviersalvatge-galerie.fr<br>
+    SIRET : 82872120900017</p>
+    
+    <h3>2. Hébergement du site</h3>
+    <p>Le site est hébergé par la société <strong>Vercel Inc.</strong><br>
+    Adresse : 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.<br>
+    Site web : https://vercel.com</p>
+
+    <h3>3. Propriété intellectuelle</h3>
+    <p>Toutes les œuvres figurant sur ce site sont des créations originales protégées par le Code de la propriété intellectuelle. Toute reproduction ou distribution sans autorisation préalable est strictly interdite.</p>
+  `,
+
+  cgv: `
+    <h2>Conditions Générales de Vente (CGV)</h2>
+    <h3>1. Objet</h3>
+    <p>Les présentes CGV régissent la vente d'œuvres d'art originales réalisées par l'artiste Olivier Salvatge via son site internet.</p>
+    
+    <h3>2. Prix et Paiement</h3>
+    <p>Les prix affichés sont exprimés en Euros (€) toutes taxes comprises (TTC). Le paiement s'effectue en ligne de manière sécurisée via la plateforme Stripe.</p>
+    
+    <h3>3. Livraison et Certificat d'Authenticité</h3>
+    <p>Chaque œuvre originale est expédiée emballée de manière sécurisée et accompagnée de son certificat d'authenticité signé par l'artiste.</p>
+    
+    <h3>4. Droit de rétractation</h3>
+    <p>Conformément à l'article L.221-18 du Code de la consommation, l'acheteur dispose d'un délai de 14 jours à compter de la réception de l'œuvre pour exercer son droit de rétractation.</p>
+  `,
+
+  privacy: `
+    <h2>Politique de Confidentialité</h2>
+    <h3>1. Collecte des données</h3>
+    <p>Les informations collectées lors de la commande (nom, adresse de livraison, e-mail) sont destinées exclusivement au traitement et à l'expédition de votre commande.</p>
+    
+    <h3>2. Traitement sécurisé des paiements</h3>
+    <p>Aucune donnée bancaire n'est stockée sur notre site. La transaction est traitée directement de manière chiffrée et sécurisée par le service Stripe.</p>
+
+    <h3>3. Vos droits (RGPD)</h3>
+    <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles sur simple demande par e-mail.</p>
+  `,
+
+  cookies: `
+    <h2>Gestion des Cookies</h2>
+    <h3>1. Cookies strictement nécessaires</h3>
+    <p>Ces cookies permettent de conserver la mémoire de votre panier d'achat et d'assurer le processus de paiement sécurisé Stripe.</p>
+    
+    <h3>2. Cookies d'analyse (Optionnels)</h3>
+    <p>Nous utilisons des cookies d'analyse anonymes afin de connaître la fréquentation du site et d'optimiser l'expérience de visite.</p>
+  `
+};
+
+function openLegalModal(type) {
+  const container = document.getElementById('legal-text-container');
+  if (LEGAL_TEXTS[type]) {
+    container.innerHTML = LEGAL_TEXTS[type];
+    document.getElementById('legal-modal-overlay').style.display = 'flex';
+  }
+}
+
+function closeLegalModal() {
+    const overlay = document.getElementById('legal-modal-overlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const consent = localStorage.getItem('cookieConsent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+});
+
+function acceptCookies() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function refuseCookies() {
+  localStorage.setItem('cookieConsent', 'refused');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+<script>
+  document.querySelectorAll('[contenteditable]').forEach(el => {
+    el.setAttribute('contenteditable', 'false');
+  });
+</script>
+</body>
+</html>
